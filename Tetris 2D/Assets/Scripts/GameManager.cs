@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int currentLevel = 1;
-    public Dictionary<int, float> levelAndSpeed = new Dictionary<int, float>();
+    public int currentLevel { get; private set; }
+    public float currentSpeed { get; private set; }
+    private Dictionary<int, float> levelAndSpeed = new Dictionary<int, float>();
+    BlockSpawner blockSpawner;
+    GameObject currentBlock;
 
     private void Awake()
     {
@@ -14,18 +17,30 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        UpdateLevelAndSpeed(true, 1);
+        blockSpawner = GetComponent<BlockSpawner>();
+        SpawnBlock();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SpawnBlock()
     {
-        
+        blockSpawner.SpawnBlock(out currentBlock);
+        GetComponent<PlayerController>().UpdateBlock(currentBlock);
+    }
+
+    private void UpdateLevelAndSpeed(bool custom = false, int level = 1)
+    {
+        if (custom) 
+            currentLevel = level;             
+        else
+            currentLevel += 1;
+
+        currentSpeed = levelAndSpeed[currentLevel];
     }
 
     private void PopulateLevelAndSpeedDictionary()
     {
-        levelAndSpeed.Add(1, 1.5f);
+        levelAndSpeed.Add(1, 0.2f);
         levelAndSpeed.Add(2, 1.5f);
         levelAndSpeed.Add(3, 1.5f);
         levelAndSpeed.Add(4, 1.5f);
