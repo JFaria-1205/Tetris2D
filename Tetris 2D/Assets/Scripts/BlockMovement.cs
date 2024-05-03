@@ -14,6 +14,7 @@ public class BlockMovement : MonoBehaviour
     private Transform objectTransform;
     private float moveDistance = 0.5f;
     private float rotateSpeed = 90f;
+    [SerializeField] private bool canRotate = true;
     private bool canMoveDown = true;
     private bool blockActive = true;
     private float moveSpeed;
@@ -88,14 +89,18 @@ public class BlockMovement : MonoBehaviour
 
     public void RotateBlock(bool rotateLeft)
     {
-        if (rotateLeft)
+        if (canRotate)
         {
-            objectTransform.Rotate(new Vector3(0, 0, rotateSpeed), Space.Self);
+            if (rotateLeft)
+            {
+                objectTransform.Rotate(new Vector3(0, 0, rotateSpeed), Space.Self);
+            }
+            else
+            {
+                objectTransform.Rotate(new Vector3(0, 0, -rotateSpeed), Space.Self);
+            }
+            CanBlockMoveDown();
         }
-        else
-        {
-            objectTransform.Rotate(new Vector3(0, 0, -rotateSpeed), Space.Self);
-        }
-        CanBlockMoveDown();
+        
     }
 }
