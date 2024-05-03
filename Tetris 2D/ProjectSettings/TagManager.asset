@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bounds
   - Block
+  - BottomBound
+  - LeftBound
+  - RightBound
   layers:
   - Default
   - TransparentFX
@@ -13,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Bounds
   - Block
-  - 
-  - 
+  - BottomBound
+  - LeftBound
+  - RightBound
   - 
   - 
   - 

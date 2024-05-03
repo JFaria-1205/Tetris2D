@@ -6,29 +6,22 @@ using UnityEngine;
 
 public class BlockMovement : MonoBehaviour
 {
+
+    [SerializeField] LayerMask bottomBoundsLayerMask;
+    [SerializeField] LayerMask rightBoundsLayerMask;
+    [SerializeField] LayerMask leftBoundsLayerMask;
+
     private Transform objectTransform;
     private float moveDistance = 0.5f;
-    private bool canMove = true;
+    private float rotateSpeed = 90f;
+    private bool canMoveDown = true;
+    private bool blockActive = true;
     private float moveSpeed;
 
     private void Start()
     {
         objectTransform = this.transform;
         moveSpeed = FindObjectOfType<GameManager>().currentSpeed;
-    }
-
-    private void Update()
-    {
-        /*
-        if (Input.GetKey(KeyCode.D))
-        {
-            objectTransform.position += new Vector3(moveDistance * Time.deltaTime, 0, 0);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            objectTransform.position += new Vector3(-moveDistance * Time.deltaTime, 0, 0);
-        }
-        */
     }
 
     public void StartAutoMoving()
@@ -39,27 +32,70 @@ public class BlockMovement : MonoBehaviour
     IEnumerator AutoMoveDown()
     {
         yield return new WaitForSeconds(moveSpeed);
-        while (canMove)
+        while (blockActive)
         {
             yield return new WaitForSeconds(moveSpeed);
-            objectTransform.position += new Vector3(0, -moveDistance, 0);
+            CanBlockMoveDown();
+
+            if (canMoveDown)
+            {
+                //Debug.Log("Block move down");
+                objectTransform.position += new Vector3(0, -moveDistance, 0);
+            }
+            else
+            {
+                //Debug.Log("Block cannot move down");
+                blockActive = false;
+            }
+        }
+        Lock();
+    }
+
+    private void Lock()
+    {
+        StopAllCoroutines();
+
+        Array childrenTransforms = GetComponentsInChildren<Transform>();
+
+        foreach (Transform childTransform in childrenTransforms)
+        {
+            childTransform.gameObject.layer = LayerMask.NameToLayer("BottomBound");
+        }
+
+        FindObjectOfType<GameManager>().BlockLocked();
+    }
+
+    private void CanBlockMoveDown()
+    {
+        Array childrenTransforms = GetComponentsInChildren<Transform>();
+
+        foreach (Transform childTransform in childrenTransforms)
+        {
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.down, 0.5f, bottomBoundsLayerMask);
+            if (raycastHit2D.collider != null)
+            {
+                Debug.Log("Block cannot move down");
+                canMoveDown = false; //block cannot move downwards because something is blocking it
+                break;
+            }
+            else
+            {
+                Debug.Log("Block can move down");
+                canMoveDown = true;
+            }
         }
     }
 
-    private void CheckIfBlockCanMove()
+    public void RotateBlock(bool rotateLeft)
     {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Bounds"/* || collision.gameObject.tag == "Block"*/)
-            Debug.Log("I am touching " + collision.gameObject.tag);
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Bounds")
-            Debug.Log("I am no longer touching " + collision.gameObject.tag);
+        if (rotateLeft)
+        {
+            objectTransform.Rotate(new Vector3(0, 0, rotateSpeed), Space.Self);
+        }
+        else
+        {
+            objectTransform.Rotate(new Vector3(0, 0, -rotateSpeed), Space.Self);
+        }
+        CanBlockMoveDown();
     }
 }

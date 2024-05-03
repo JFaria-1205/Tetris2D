@@ -28,6 +28,16 @@ public class GameManager : MonoBehaviour
         GetComponent<PlayerController>().UpdateBlock(currentBlock);
     }
 
+    public void BlockLocked()
+    {
+        //check for clear and award points if cleared
+
+        //update level and speed
+
+        //spawn next block
+        SpawnBlock();
+    }
+
     private void UpdateLevelAndSpeed(bool custom = false, int level = 1)
     {
         if (custom) 
@@ -40,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     private void PopulateLevelAndSpeedDictionary()
     {
-        levelAndSpeed.Add(1, 0.2f);
+        levelAndSpeed.Add(1, 0.5f);
         levelAndSpeed.Add(2, 1.5f);
         levelAndSpeed.Add(3, 1.5f);
         levelAndSpeed.Add(4, 1.5f);
