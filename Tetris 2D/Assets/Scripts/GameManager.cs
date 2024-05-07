@@ -32,7 +32,9 @@ public class GameManager : MonoBehaviour
     {
         //check for clear and award points if cleared
 
+
         //update level and speed
+
 
         //spawn next block
         SpawnBlock();

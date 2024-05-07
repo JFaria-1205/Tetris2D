@@ -6,26 +6,25 @@ using UnityEngine;
 
 public class BlockMovement : MonoBehaviour
 {
-
-    [SerializeField] LayerMask bottomBoundsLayerMask;
-    [SerializeField] LayerMask rightBoundsLayerMask;
-    [SerializeField] LayerMask leftBoundsLayerMask;
-
+    [SerializeField] private bool canRotate = true;
+    [SerializeField] LayerMask bounds;
     private Transform objectTransform;
     private float moveDistance = 0.5f;
     private float rotateSpeed = 90f;
-    [SerializeField] private bool canRotate = true;
     private bool canMoveDown = true;
     private bool blockActive = true;
     private float moveSpeed;
+    private Array childrenTransforms;
 
     private void Start()
     {
         objectTransform = this.transform;
         moveSpeed = FindObjectOfType<GameManager>().currentSpeed;
+
+        childrenTransforms = GetComponentsInChildren<Transform>();
     }
 
-    public void StartAutoMoving()
+    public void StartAutoMovingDown()
     {
         StartCoroutine(AutoMoveDown());
     }
@@ -40,12 +39,10 @@ public class BlockMovement : MonoBehaviour
 
             if (canMoveDown)
             {
-                //Debug.Log("Block move down");
                 objectTransform.position += new Vector3(0, -moveDistance, 0);
             }
             else
             {
-                //Debug.Log("Block cannot move down");
                 blockActive = false;
             }
         }
@@ -56,11 +53,9 @@ public class BlockMovement : MonoBehaviour
     {
         StopAllCoroutines();
 
-        Array childrenTransforms = GetComponentsInChildren<Transform>();
-
         foreach (Transform childTransform in childrenTransforms)
         {
-            childTransform.gameObject.layer = LayerMask.NameToLayer("BottomBound");
+            childTransform.gameObject.layer = LayerMask.NameToLayer("Bounds");
         }
 
         FindObjectOfType<GameManager>().BlockLocked();
@@ -68,23 +63,92 @@ public class BlockMovement : MonoBehaviour
 
     private void CanBlockMoveDown()
     {
-        Array childrenTransforms = GetComponentsInChildren<Transform>();
-
         foreach (Transform childTransform in childrenTransforms)
         {
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.down, 0.5f, bottomBoundsLayerMask);
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.down, 0.5f, bounds);
+
             if (raycastHit2D.collider != null)
             {
-                Debug.Log("Block cannot move down");
                 canMoveDown = false; //block cannot move downwards because something is blocking it
                 break;
             }
             else
             {
-                Debug.Log("Block can move down");
                 canMoveDown = true;
             }
         }
+    }
+
+    public bool MoveRight(List<Transform> childrenToIgnore = null)
+    {
+        bool canMoveRight = true;
+
+        foreach (Transform childTransform in childrenTransforms)
+        {
+            if (childrenToIgnore != null)
+            {
+                if (!childrenToIgnore.Contains(childTransform))
+                {
+                    RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.right, 0.5f, bounds);
+                    if (raycastHit2D.collider != null)
+                    {
+                        canMoveRight = false;
+                        break;
+                    }
+
+                } //else skip child check
+            }
+            else
+            {
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.right, 0.5f, bounds);
+                if (raycastHit2D.collider != null)
+                {
+                    canMoveRight = false;
+                    break;
+                }
+            }
+        }
+
+        if (canMoveRight)
+            objectTransform.position += new Vector3(moveDistance, 0, 0);
+
+        return canMoveRight;
+    }
+
+    public bool MoveLeft(List<Transform> childrenToIgnore = null)
+    {
+        bool canMoveLeft = true;
+
+        foreach (Transform childTransform in childrenTransforms)
+        {
+            if (childrenToIgnore != null)
+            {
+                if (!childrenToIgnore.Contains(childTransform))
+                {
+                    RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.left, 0.5f, bounds);
+                    if (raycastHit2D.collider != null)
+                    {
+                        canMoveLeft = false;
+                        break;
+                    }
+
+                } //else skip child check
+            }
+            else
+            {
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.left, 0.5f, bounds);
+                if (raycastHit2D.collider != null)
+                {
+                    canMoveLeft = false;
+                    break;
+                }
+            }
+        }
+
+        if (canMoveLeft)
+            objectTransform.position += new Vector3(-moveDistance, 0, 0);
+
+        return canMoveLeft;
     }
 
     public void RotateBlock(bool rotateLeft)
@@ -99,8 +163,63 @@ public class BlockMovement : MonoBehaviour
             {
                 objectTransform.Rotate(new Vector3(0, 0, -rotateSpeed), Space.Self);
             }
+
+            FixBlockPosition();
+
+            /*
+            if(!FixBlockPosition()) //if position was unable to be fixed, try rotate other way
+            {
+                Debug.Log("Cannot rotate, rotating back");
+                if (rotateLeft)
+                {
+                    objectTransform.Rotate(new Vector3(0, 0, -rotateSpeed), Space.Self);
+                }
+                else
+                {
+                    objectTransform.Rotate(new Vector3(0, 0, rotateSpeed), Space.Self);
+                }
+            }
+            */
+
             CanBlockMoveDown();
-        }
-        
+        }  
     }
+
+    private bool FixBlockPosition()
+    {
+        bool fixingPosition = true;
+        List<Transform> childrenOutOfBounds = new List<Transform>();
+
+        while (fixingPosition)
+        {
+            foreach (Transform childTransform in childrenTransforms)
+            {
+                RaycastHit2D boxcastHit2D = Physics2D.BoxCast(childTransform.position, new Vector2(0.25f, 0.25f), 0f, Vector2.down, 0.25f, bounds);
+
+                if (boxcastHit2D.collider != null)
+                {
+                    childrenOutOfBounds.Add(childTransform);
+
+                    if (childTransform.position.x > objectTransform.position.x) //if child that hit the cast's x pos is to the RIGHT of parent
+                    {
+                        //move to the left
+                        if (!MoveLeft(childrenOutOfBounds))
+                            return false;
+                    }
+                    else //if child that hit the cast's x pos is to the LEFT of parent
+                    {
+                        //move to the right
+                        if (!MoveRight(childrenOutOfBounds))
+                            return false;
+                    }
+                    break;
+                }
+            }
+            fixingPosition = false;
+        }
+
+        return true;
+
+    }
+
 }

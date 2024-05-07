@@ -302,16 +302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d73bd7e9fd54b4ca75197c9bbc0c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomBoundsLayerMask:
+  canRotate: 1
+  bounds:
     serializedVersion: 2
     m_Bits: 128
-  rightBoundsLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  leftBoundsLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  canRotate: 1
 --- !u!61 &4135608336207314919
 BoxCollider2D:
   m_ObjectHideFlags: 0
