@@ -20,7 +20,7 @@ public class BlockSpawner : MonoBehaviour
 
         currentBlock = spawnedBlock;
 
-        spawnedBlock.GetComponent<BlockMovement>().StartAutoMovingDown();
+        spawnedBlock.GetComponent<BlockMovement>().InitializeBlock();
     }
 
     private void CheckBlockSpawnPoint(GameObject blockToCheck, out bool checkAgain)

@@ -1,50 +1,44 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class BlockMovement : MonoBehaviour
 {
-    [SerializeField] private bool canRotate = true;
+    [SerializeField] private readonly bool canRotate = true;
     [SerializeField] LayerMask bounds;
-    private Transform objectTransform;
-    private float moveDistance = 0.5f;
-    private float rotateDistance = 90f;
+    private Transform blockTransform;
+    private readonly float moveDistance = 0.5f;
+    private readonly float rotateDistance = 90f;
+    private bool pauseRotations = false;
     private float moveSpeed;
-    private bool blockCanMoveDown = true;
+    private float moveSpeedIncreaseMultiplier = 1;
     private bool blockActive = true;
     private Array childrenTransforms;
 
     private void Start()
     {
-        objectTransform = this.transform;
+        blockTransform = this.transform;
         moveSpeed = FindObjectOfType<GameManager>().currentSpeed;
-
         childrenTransforms = GetComponentsInChildren<Transform>();
     }
 
-    public void StartAutoMovingDown()
+    public void InitializeBlock()
     {
         StartCoroutine(AutoMoveDown());
     }
 
     IEnumerator AutoMoveDown()
     {
-        yield return new WaitForSeconds(moveSpeed);
+        yield return new WaitForSeconds(moveSpeed * moveSpeedIncreaseMultiplier);
         while (blockActive)
         {
-            yield return new WaitForSeconds(moveSpeed);
-            CanBlockMoveDown();
+            yield return new WaitForSeconds(moveSpeed * moveSpeedIncreaseMultiplier);
 
-            if (blockCanMoveDown)
-            {
-                objectTransform.position += new Vector3(0, -moveDistance, 0);
-            }
-            else
-            {
+            if (!MoveDown())
                 blockActive = false;
-            }
         }
         Lock();
     }
@@ -61,244 +55,226 @@ public class BlockMovement : MonoBehaviour
         FindObjectOfType<GameManager>().BlockLocked();
     }
 
-    private void CanBlockMoveDown()
-    {
-        foreach (Transform childTransform in childrenTransforms)
-        {
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.down, 0.5f, bounds);
+    #region Block Movements
 
-            if (raycastHit2D.collider != null)
-            {
-                blockCanMoveDown = false; //block cannot move downwards because something is blocking it
-                break;
-            }
-            else
-            {
-                blockCanMoveDown = true;
-            }
-        }
-    }
-
-    public bool MoveRight(List<Transform> childrenToIgnore = null)
+    private bool MoveDown(List<Transform> childrenToIgnore = null)
     {
-        bool canMoveRight = true;
+        bool canMoveDown = false;
 
         if (blockActive)
-        {
-            if (childrenToIgnore == null) //regular move
-            {
-                foreach (Transform childTransform in childrenTransforms)
-                {
-                    RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.right, 0.5f, bounds);
-                    if (raycastHit2D.collider != null)
-                    {
-                        canMoveRight = false;
-                        break;
-                    }
-                }
-            }
-            else //moving rotated piece
-            {
-                foreach (Transform childTransform in childrenTransforms)
-                {
-                    if (!childrenToIgnore.Contains(childTransform))
-                    {
-                        RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.right, 0.5f, bounds);
-                        if (raycastHit2D.collider != null)
-                        {
-                            canMoveRight = false;
-                            break;
-                        }
-                    } //else skip child check
-                }
-            }
-
-            if (canMoveRight)
-            {
-                objectTransform.position += new Vector3(moveDistance, 0, 0);
-                CanBlockMoveDown();
-            }
-        }
-        else
-            return false;
-
-        return canMoveRight;
-    }
-
-    public bool MoveLeft(List<Transform> childrenToIgnore = null)
-    {
-        bool canMoveLeft = true;
-
-        if (blockActive)
-        {
-            if (childrenToIgnore == null) //regular move
-            {
-                foreach (Transform childTransform in childrenTransforms)
-                {
-                    RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.left, 0.5f, bounds);
-                    if (raycastHit2D.collider != null)
-                    {
-                        canMoveLeft = false;
-                        break;
-                    }
-                }
-            }
-            else //moving rotated piece
-            {
-                foreach (Transform childTransform in childrenTransforms)
-                {
-                    if (!childrenToIgnore.Contains(childTransform))
-                    {
-                        RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.left, 0.5f, bounds);
-                        if (raycastHit2D.collider != null)
-                        {
-                            canMoveLeft = false;
-                            break;
-                        }
-                    } //else skip child check
-                }
-            }
-
-            if (canMoveLeft)
-            {
-                objectTransform.position += new Vector3(-moveDistance, 0, 0);
-                CanBlockMoveDown();
-            }
-        }
-        else
-            return false;
-
-        return canMoveLeft;
-    }
-
-    private bool MoveDown (List<Transform> childrenToIgnore) //no optional parameter becuase this is just for rotation fix so there has to be a list of children to ignore
-    {
-        bool canMoveDown = true;
-
-        if (childrenToIgnore != null)
         {
             foreach (Transform childTransform in childrenTransforms)
             {
                 if (!childrenToIgnore.Contains(childTransform))
                 {
                     RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.down, 0.5f, bounds);
+
                     if (raycastHit2D.collider != null)
                     {
-                        canMoveDown = false;
+                        canMoveDown = false; //block cannot move down because something is blocking it
                         break;
                     }
+                    else
+                        canMoveDown = true;
                 }
             }
-        }
-        else
-            Debug.Log("ERROR: Function 'MoveDown()' in 'BlockMovement.cs' requires a valid list of children to ignore.");
+        }        
 
         if (canMoveDown)
-            objectTransform.position += new Vector3(0, -moveDistance, 0);
+            blockTransform.position += new Vector3(0, -moveDistance, 0);
 
         return canMoveDown;
     }
 
-    private bool MoveUp(List<Transform> childrenToIgnore) //no optional parameter becuase this is just for rotation fix so there has to be a list of children to ignore
+    private bool MoveUp(List<Transform> childrenToIgnore = null)
     {
-        bool canMoveUp = true;
+        bool canMoveUp = false;
 
-        if (childrenToIgnore != null)
+        if (blockActive)
         {
             foreach (Transform childTransform in childrenTransforms)
             {
                 if (!childrenToIgnore.Contains(childTransform))
                 {
                     RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.up, 0.5f, bounds);
+
                     if (raycastHit2D.collider != null)
                     {
                         canMoveUp = false;
                         break;
                     }
+                    else
+                        canMoveUp = true;
                 }
             }
-        }
-        else
-            Debug.Log("ERROR: Function 'MoveUp()' in 'BlockMovement.cs' requires a valid list of children to ignore.");
+        }        
 
         if (canMoveUp)
-            objectTransform.position += new Vector3(0, moveDistance, 0);
+            blockTransform.position += new Vector3(0, moveDistance, 0);
 
         return canMoveUp;
     }
 
+    public bool MoveRight(List<Transform> childrenToIgnore = null)
+    {
+        bool canMoveRight = false;
+
+        if (blockActive)
+        {
+            foreach (Transform childTransform in childrenTransforms)
+            {
+                if (!childrenToIgnore.Contains(childTransform))
+                {
+                    RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.right, 0.5f, bounds);
+
+                    if (raycastHit2D.collider != null)
+                    {
+                        canMoveRight = false; //block cannot move right because something is blocking it
+                        break;
+                    }
+                    else
+                        canMoveRight = true;
+                }
+            }
+        }        
+
+        if (canMoveRight)
+            blockTransform.position += new Vector3(moveDistance, 0, 0);
+
+        return canMoveRight;
+    }    
+
+    public bool MoveLeft(List<Transform> childrenToIgnore = null)
+    {
+        bool canMoveLeft = false;
+
+        if (blockActive)
+        {
+            foreach (Transform childTransform in childrenTransforms)
+            {
+                if (!childrenToIgnore.Contains(childTransform))
+                {
+                    RaycastHit2D raycastHit2D = Physics2D.Raycast(childTransform.position, Vector2.left, 0.5f, bounds);
+
+                    if (raycastHit2D.collider != null)
+                    {
+                        canMoveLeft = false;
+                        break;
+                    }
+                    else
+                        canMoveLeft = true;
+                }
+            }
+        }        
+
+        if (canMoveLeft)
+            blockTransform.position += new Vector3(-moveDistance, 0, 0);
+
+        return canMoveLeft;
+    }
+
+    #endregion
+
+
     public void RotateBlock(bool rotateLeft)
     {
-        Transform originalTransform = objectTransform;
+        Transform originalPosition = blockTransform;
 
-        if (canRotate && blockActive)
+        if (canRotate && blockActive && !pauseRotations)
         {
-            canRotate = false;
+            pauseRotations = true;
 
             if (rotateLeft)
-                objectTransform.Rotate(new Vector3(0, 0, rotateDistance), Space.Self);
+                blockTransform.Rotate(new Vector3(0, 0, rotateDistance), Space.Self);
             else
-                objectTransform.Rotate(new Vector3(0, 0, -rotateDistance), Space.Self);
+                blockTransform.Rotate(new Vector3(0, 0, -rotateDistance), Space.Self);
 
-
-            Debug.Log("See if position needs to be fixed");
-            bool positionNeedsFixing = true;
-            int rotationsChecked = 0;
-            while (positionNeedsFixing/* || rotationsChecked < 3*/)
-            {
-                if (!FixBlockPosition())
-                {
-                    Debug.Log("Position not fixed - do alternated rotation");
-                    switch (rotationsChecked)
-                    {
-                        default: //rotate same direction as original rotation
-                            if (rotateLeft)
-                                objectTransform.Rotate(new Vector3(0, 0, rotateDistance), Space.Self);
-                            else
-                                objectTransform.Rotate(new Vector3(0, 0, -rotateDistance), Space.Self);
-                            Debug.Log("Default alt rotation (You shouldn't see this)");
-                            break;
-                        case 0: //check rotation of other direction
-                            if (rotateLeft)
-                                objectTransform.Rotate(new Vector3(0, 0, rotateDistance*2), Space.Self);
-                            else
-                                objectTransform.Rotate(new Vector3(0, 0, -rotateDistance*2), Space.Self);
-                            Debug.Log("Try rotate oposite direction");
-                            break;
-                        case 1: //original rotation + 1 (back one)
-                            if (rotateLeft)
-                                objectTransform.Rotate(new Vector3(0, 0, -rotateDistance), Space.Self);
-                            else
-                                objectTransform.Rotate(new Vector3(0, 0, rotateDistance), Space.Self);
-                            Debug.Log("Try rotate original + 1 direction");
-                            break;
-                        case 2: //rotate unavailable - rotate back to original
-                            Debug.Log("Rotation unavailable - going back to original rotation");
-                            objectTransform = originalTransform;
-                            positionNeedsFixing = false;
-                            break;
-                    }
-                }
-                else
-                {
-                    positionNeedsFixing = false;
-                    Debug.Log("Position fixed / didn't need fixing");
-                    break;
-                }
-
-                rotationsChecked++;
-            }
-
-            CanBlockMoveDown();
-            canRotate = true;
+            if (!TryFixRotationErrors(rotateLeft)) //If rotation errors weren't able to be fixed, go back to original position
+                blockTransform = originalPosition;
+            
+            pauseRotations = false;
         }        
     }
 
-    private bool FixBlockPosition()
-    {
-        bool fixingPosition = true;
-        Transform originalPosition = objectTransform;
+    private bool TryFixRotationErrors(bool originalRotateLeft)
+    {        
+        Transform originalPosition = blockTransform;
+
+        bool tryFixRotationErrors = true;
         List<Transform> childrenOutOfBounds = new List<Transform>();
+        
+
+        bool fixingPosition = true;
+
+        while (tryFixRotationErrors)
+        {
+            childrenOutOfBounds.Clear();
+
+            //Check if any children are out of bounds, and if so add them to the list of children out of bounds
+            foreach (Transform childTransform in childrenTransforms)
+            {
+                RaycastHit2D boxcastHit2D = Physics2D.BoxCast(childTransform.position, new Vector2(0.25f, 0.25f), 0f, Vector2.zero, 0f, bounds);
+
+                if (boxcastHit2D.collider != null) //if boxcast hit something (child is out of bounds)
+                {
+                    childrenOutOfBounds.Add(childTransform);
+                    //Debug.Log("Rotation hit: " + childTransform.position);
+                }
+            }
+
+            if (childrenOutOfBounds.Count <= 0) //if nothing is out of bounds, no rotation errors => return true
+                return true;
+
+            //childrenOutOfBounds.FirstOrDefault().transform.position
+            //get any child and try to move, if cannot then rotate?
+        }
+
+        //Debug.Log("See if position needs to be fixed");
+        bool positionNeedsChecking = true;
+        int rotationsChecked = 0;
+        while (positionNeedsChecking && rotationsChecked < 3)
+        {
+            if (/*original: !TryFixRotationErrors() */ positionNeedsChecking)
+            {
+                //Debug.Log("Position not fixed - do alternated rotation");
+                switch (rotationsChecked)
+                {
+                    default: //Debug.Log("Default alternate rotation (You shouldn't see this)");
+                        if (originalRotateLeft)
+                            blockTransform.Rotate(new Vector3(0, 0, rotateDistance), Space.Self);
+                        else
+                            blockTransform.Rotate(new Vector3(0, 0, -rotateDistance), Space.Self);
+                        break;
+                    case 0: //check rotation of other direction
+                        if (originalRotateLeft)
+                            blockTransform.Rotate(new Vector3(0, 0, rotateDistance * 2), Space.Self);
+                        else
+                            blockTransform.Rotate(new Vector3(0, 0, -rotateDistance * 2), Space.Self);
+                        Debug.Log("Try rotate oposite direction");
+                        break;
+                    case 1: //original rotation + 1 (back one)
+                        if (originalRotateLeft)
+                            blockTransform.Rotate(new Vector3(0, 0, -rotateDistance), Space.Self);
+                        else
+                            blockTransform.Rotate(new Vector3(0, 0, rotateDistance), Space.Self);
+                        Debug.Log("Try rotate original + 1 direction");
+                        break;
+                    case 2: //rotate unavailable - rotate back to original
+                        Debug.Log("Rotation unavailable - going back to original rotation");
+                        blockTransform = originalPosition;
+                        positionNeedsChecking = false;
+                        break;
+                }
+            }
+            else
+            {
+                positionNeedsChecking = false;
+                Debug.Log("Position fixed / didn't need fixing");
+                break;
+            }
+
+            rotationsChecked++;
+        }
 
         while (fixingPosition)
         {
@@ -313,6 +289,7 @@ public class BlockMovement : MonoBehaviour
                 if (boxcastHit2D.collider != null)
                 {
                     childrenOutOfBounds.Add(childTransform);
+                    Debug.Log("Rotation hit: " + childTransform.position);
                 }
             }
 
@@ -321,38 +298,38 @@ public class BlockMovement : MonoBehaviour
                 //for each child out of bounds, move block
                 foreach (Transform childTransform in childrenOutOfBounds)
                 {
-                    if (childTransform.position.x > objectTransform.position.x) //if child out of bound's x pos is to the RIGHT of parent
+                    if (childTransform.position.x > blockTransform.position.x) //if child out of bound's x pos is to the RIGHT of parent
                     {
                         Debug.Log("Try move left to fix position");
                         //move to the left - if the block can't then the position wasn't able to be fixed = rotate back
                         if (!MoveLeft(childrenOutOfBounds))
                         {
                             Debug.Log("Move left didnt work");
-                            objectTransform = originalPosition;
+                            blockTransform = originalPosition;
                             return false;
                         }
                         Debug.Log("Move left worked");
                     }
-                    else if (childTransform.position.x < objectTransform.position.x) //if child out of bound's x pos is to the LEFT of parent
+                    else if (childTransform.position.x < blockTransform.position.x) //if child out of bound's x pos is to the LEFT of parent
                     {
                         Debug.Log("Try move right to fix position");
                         //move to the right - if the block can't then the position wasn't able to be fixed = rotate back
                         if (!MoveRight(childrenOutOfBounds))
                         {
                             Debug.Log("Move right didnt work");
-                            objectTransform = originalPosition;
+                            blockTransform = originalPosition;
                             return false;
                         }
                         Debug.Log("Move right worked");
                     }
-                    else if (childTransform.position.y < objectTransform.position.y) //if child out of bound's y pos is BELOW the parent
+                    else if (childTransform.position.y < blockTransform.position.y) //if child out of bound's y pos is BELOW the parent
                     {
                         Debug.Log("Try move up to fix position");
                         //move up - if the block can't then the position wasn't able to be fixed = rotate back
                         if (!MoveUp(childrenOutOfBounds))
                         {
                             Debug.Log("Move up didnt work");
-                            objectTransform = originalPosition;
+                            blockTransform = originalPosition;
                             return false;
                         }
                         Debug.Log("Move up worked");
@@ -364,7 +341,7 @@ public class BlockMovement : MonoBehaviour
                         if (!MoveDown(childrenOutOfBounds))
                         {
                             Debug.Log("Move down didnt work");
-                            objectTransform = originalPosition;
+                            blockTransform = originalPosition;
                             return false;
                         }
                         Debug.Log("Move down worked");
