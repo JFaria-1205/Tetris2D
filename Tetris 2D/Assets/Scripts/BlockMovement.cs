@@ -12,18 +12,27 @@ public class BlockMovement : MonoBehaviour
     [SerializeField] LayerMask bounds;
     private Transform blockTransform;
     private readonly float moveDistance = 0.5f;
-    private readonly float rotateDistance = 90f;
+    private readonly float rotateDistance = -90f;
     private bool pauseRotations = false;
-    private float moveSpeed;
-    private float moveSpeedIncreaseMultiplier = 1;
+
+    private float gravity;
+    private float currentGravityValue;
+    private float gravityIncreased = 2.36f;
+    private float gravityTimer = 0;
+    private float waitTimer = 0.01667f;
+
+    //private float moveSpeed;
+    //private float currentBlockSpeed;
+    //private float moveSpeedIncreased = 0.04f;
     private bool blockActive = true;
     private Array childrenTransforms;
 
     private void Start()
     {
         blockTransform = this.transform;
-        moveSpeed = FindObjectOfType<GameManager>().currentSpeed;
+        currentGravityValue = FindObjectOfType<GameManager>().currentGravity;
         childrenTransforms = GetComponentsInChildren<Transform>();
+        gravity = currentGravityValue;
     }
 
     public void InitializeBlock()
@@ -31,16 +40,24 @@ public class BlockMovement : MonoBehaviour
         StartCoroutine(AutoMoveDown());
     }
 
+    
     IEnumerator AutoMoveDown()
     {
-        yield return new WaitForSeconds(moveSpeed * moveSpeedIncreaseMultiplier);
+        yield return new WaitForSeconds(waitTimer);
         while (blockActive)
         {
-            yield return new WaitForSeconds(moveSpeed * moveSpeedIncreaseMultiplier);
+            yield return new WaitForSeconds(waitTimer);
+            gravityTimer += gravity;
 
-            if (!MoveDown())
-                blockActive = false;
+            if (gravityTimer >= 1)
+            {
+                gravityTimer = 0;
+
+                if (!MoveDown())
+                    blockActive = false;
+            }            
         }
+        yield return new WaitForSeconds(1f);
         Lock();
     }
 
@@ -249,9 +266,18 @@ public class BlockMovement : MonoBehaviour
         return canMoveLeft;
     }
 
+    public void IncreaseBlockSpeed(bool increase)
+    {
+        if (increase)
+            gravity = gravityIncreased;
+        else
+            gravity = currentGravityValue;
+    }
+
     #endregion
 
-    public void RotateBlock(bool rotateLeft)
+    #region Block Rotation
+    public void RotateBlock(bool rotateRight)
     {
         Transform originalPosition = blockTransform;
 
@@ -259,7 +285,7 @@ public class BlockMovement : MonoBehaviour
         {
             pauseRotations = true;
 
-            if (rotateLeft)
+            if (rotateRight)
                 blockTransform.Rotate(new Vector3(0, 0, rotateDistance), Space.Self);
             else
                 blockTransform.Rotate(new Vector3(0, 0, -rotateDistance), Space.Self);
@@ -280,7 +306,7 @@ public class BlockMovement : MonoBehaviour
                 }
 
                 rotationChecks++;
-                DoAlternateRotation(rotationChecks, rotateLeft);
+                DoAlternateRotation(rotationChecks, rotateRight);
             }
 
             if (!rotationAllowed)
@@ -416,6 +442,8 @@ public class BlockMovement : MonoBehaviour
                 break;
         }
     }
+
+    #endregion
 
     private List<Transform> GetChildrenOutOfBounds()
     {
