@@ -15,7 +15,7 @@ C:/Users/jfaria/Documents/Unity/Tetris2D/Tetris 2D
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-55667
+50468
 Successfully changed project path to: C:/Users/jfaria/Documents/Unity/Tetris2D/Tetris 2D
 C:/Users/jfaria/Documents/Unity/Tetris2D/Tetris 2D
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/jfaria/Documents/Unity/Tetris2D/Tetris 2D
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [13864] Host "[IP] 69.160.236.50 [Port] 0 [Flags] 2 [Guid] 932015585 [EditorId] 932015585 [Version] 1048832 [Id] WindowsEditor(7,AIOJF1903) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [26408] Host "[IP] 69.160.236.50 [Port] 0 [Flags] 2 [Guid] 255225600 [EditorId] 255225600 [Version] 1048832 [Id] WindowsEditor(7,AIOJF1903) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [13864] Host "[IP] 69.160.236.50 [Port] 0 [Flags] 2 [Guid] 932015585 [EditorId] 932015585 [Version] 1048832 [Id] WindowsEditor(7,AIOJF1903) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [26408] Host "[IP] 69.160.236.50 [Port] 0 [Flags] 2 [Guid] 255225600 [EditorId] 255225600 [Version] 1048832 [Id] WindowsEditor(7,AIOJF1903) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 23 workers.
-Refreshing native plugins compatible for Editor in 12.21 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 12.99 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.26f1 (ec6cd8118806)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.26f1-x86_64/Editor/Data/Resources/UnitySubsystems
@@ -70,44 +70,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.26f1-x86_64/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.26f1-x86_64/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.26f1-x86_64/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56628
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.26f1-x86_64/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005609 seconds.
-- Loaded All Assemblies, in  0.226 seconds
+Registered in 0.006351 seconds.
+- Loaded All Assemblies, in  0.263 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.170 seconds
-Domain Reload Profiling: 394ms
-	BeginReloadAssembly (76ms)
+- Finished resetting the current domain, in  0.177 seconds
+Domain Reload Profiling: 438ms
+	BeginReloadAssembly (95ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (20ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (37ms)
-	LoadAllAssembliesAndSetupDomain (85ms)
-		LoadAssemblies (75ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (88ms)
+		LoadAssemblies (93ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (83ms)
-			TypeCache.Refresh (82ms)
-				TypeCache.ScanAssembly (72ms)
+		AnalyzeDomain (86ms)
+			TypeCache.Refresh (85ms)
+				TypeCache.ScanAssembly (76ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (171ms)
+	FinalizeReload (177ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (136ms)
+		SetupLoadedEditorAssemblies (140ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
+			InitializePlatformSupportModulesInManaged (7ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (1ms)
-			ProcessInitializeOnLoadAttributes (95ms)
-			ProcessInitializeOnLoadMethodAttributes (30ms)
+			ProcessInitializeOnLoadAttributes (94ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,56 +115,706 @@ Domain Reload Profiling: 394ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.526 seconds
-Refreshing native plugins compatible for Editor in 12.45 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.549 seconds
+Refreshing native plugins compatible for Editor in 5.75 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.455 seconds
-Domain Reload Profiling: 978ms
-	BeginReloadAssembly (101ms)
+- Finished resetting the current domain, in  0.471 seconds
+Domain Reload Profiling: 1017ms
+	BeginReloadAssembly (117ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (13ms)
-	RebuildCommonClasses (19ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (30ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (21ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (34ms)
 	LoadAllAssembliesAndSetupDomain (367ms)
-		LoadAssemblies (303ms)
+		LoadAssemblies (297ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (127ms)
-			TypeCache.Refresh (104ms)
-				TypeCache.ScanAssembly (93ms)
-			ScanForSourceGeneratedMonoScriptInfo (16ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (455ms)
+		AnalyzeDomain (142ms)
+			TypeCache.Refresh (116ms)
+				TypeCache.ScanAssembly (102ms)
+			ScanForSourceGeneratedMonoScriptInfo (17ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (472ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (339ms)
+		SetupLoadedEditorAssemblies (356ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
+			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (56ms)
-			ProcessInitializeOnLoadAttributes (218ms)
-			ProcessInitializeOnLoadMethodAttributes (48ms)
+			BeforeProcessingInitializeOnLoad (57ms)
+			ProcessInitializeOnLoadAttributes (231ms)
+			ProcessInitializeOnLoadMethodAttributes (54ms)
 			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 5.37 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 5.94 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5676 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 101 unused Assets / (0.9 MB). Loaded Objects now: 6122.
 Memory consumption went from 221.0 MB to 220.1 MB.
-Total: 3.159200 ms (FindLiveObjects: 0.280200 ms CreateObjectMapping: 0.096500 ms MarkObjects: 2.475900 ms  DeleteObjects: 0.306200 ms)
+Total: 3.301000 ms (FindLiveObjects: 0.311400 ms CreateObjectMapping: 0.126800 ms MarkObjects: 2.487100 ms  DeleteObjects: 0.374700 ms)
 
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1122524.914394 seconds.
+  path: Assets/Objects/Block_Type_S.prefab
+  artifactKey: Guid(0c1c1febe428c63408a1c44e9336331b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Block_Type_S.prefab using Guid(0c1c1febe428c63408a1c44e9336331b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66190b70f7a7b9a32447c6e309d4e8ef') in 0.170972 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 23
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Objects/Block_Type_O.prefab
+  artifactKey: Guid(ce97fe05b78ec4f47819a83bb5feddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Block_Type_O.prefab using Guid(ce97fe05b78ec4f47819a83bb5feddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1f7100bb242fc974aec5810f23bf451') in 0.007762 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 388.319138 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '925d35b02ad1782ba577a30b6bf20539') in 0.000788 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 49.446363 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9de53639effedafea69a344132c5a76b') in 0.000906 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 10.179804 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1442277064c167e7c6dea09ec0c74fc6') in 0.001146 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.320838 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2d2712edb36d2f1ff638fc91b23b4b5') in 0.000706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 72.290791 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7452a0a2153a3ffda3069d64b266f25') in 0.000705 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 98.317542 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7d1b4e27e824f6dae0d113ffc011dab') in 0.000894 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.292760 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b442a00c115fad578261cba20295aacc') in 0.000853 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 10.797785 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '494d1bdef23ae6a08368d267bc5170b3') in 0.000691 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.672517 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd03a6252f9eb859c066cc6be6f2b41c7') in 0.001227 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 14.543963 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f63d79939cafac4a5162a9eee8826f5a') in 0.000871 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 22.265334 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9be939cadce1360d138478d88307b10b') in 0.001355 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 24.603757 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79eb8cef3f99c08cdf6a8efaaa888c31') in 0.000676 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 19.566836 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd42c1a6112b45921e798f0988c75767e') in 0.001277 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 16.444938 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82f0ffcf6d83b81ce54e3904562500fe') in 0.001251 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.674485 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bc3fb31f42ca677aaaaa964ff661f4f') in 0.001446 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.225973 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f786fe2f19ae948b4bedd0b82ac07c09') in 0.000947 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 14.514803 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bcee75f876f03ac61a896273465d986') in 0.000818 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1280.793999 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58ab9c68cdb02b13744de1ab85082d6b') in 0.000794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 72.446782 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8bf5c5b43c3cc7f65fea5038f6a6ec7') in 0.000736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 10.456109 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '626efc60f3b07469115b66151e129bf4') in 0.001164 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.428351 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc610a3f447a6e9bbf082747a1633910') in 0.000762 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 69.658125 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5c6f358a7a2f98d7bffbab88e3c33d5') in 0.001596 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 102.909269 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd622e555a73ad1f57846cc89d05fa2a') in 0.001712 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 47.549694 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58b638e1ff23297c79a86bc95d7404ee') in 0.000629 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 18.225769 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '948e597381e0e72cbe0fa3b0f1cfe5d9') in 0.000746 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 329.099591 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73998b5087b14695daf6b2e8e603b16f') in 0.000745 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 26.460025 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c62404c81869dbfe760e22e104ab0235') in 0.001022 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 40.484827 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c083a02650b010503d62fa11d2e02194') in 0.001293 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 32.229875 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2412c94e7619a67ebc71b69e7802d62c') in 0.000880 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 154.229602 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f739a945bafdf565ab5fd4d98ab9db3f') in 0.001113 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 178.707059 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23db40d25885a8094f67b34275f1fde0') in 0.001496 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.483919 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da630282364421d6b530c5d159f73630') in 0.000926 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 27.772257 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b90ee75c6e18c7c284f7c80385f9f7e') in 0.001216 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 12.464007 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a326c352590790076cf072f0b38e643e') in 0.000678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 63.570580 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fe3888a110b7de023caa46ce7414963') in 0.000953 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 19.668959 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7dd7cfc7b1ca1cbe9470552fe4ad777') in 0.000795 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.311836 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b441e36634ca4e0800547e96202b1749') in 0.001796 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3617.481354 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a2ecd92a455dcf4ad07982e833264c8') in 0.000995 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 100.502310 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '909eec0e83c82acc7ca9884c9a11c4a4') in 0.000846 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 21.385653 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b67350a6b5676222ffed69373fa3268') in 0.001198 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 100.722344 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e01edfbaaf76b831b11e6048b8a1a36') in 0.000883 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 35.636028 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '434db259d78a970703503e78b9fa37a1') in 0.000916 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 249.401631 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b37fb4b610180343cac9744f78ab4cba') in 0.000789 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 20.559112 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '150897964b48ff9f5f0fded83b0c7a87') in 0.000873 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.065825 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e62d1dcffc0731c14846c45df0f00dd2') in 0.001489 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 55.662982 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e8ff0817da364fa623ca1cf6cd84059') in 0.001537 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 16.928152 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcc0b5a3eec969285dc3e401e033c576') in 0.000885 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 142.296879 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f11dda35c58dc469869a0541e17df6d4') in 0.001247 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 374.312809 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c85bf42d7f82d9f8877169ae2ede261') in 0.001357 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.260565 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e53b3043011362f38ee50e0c3b4b24f5') in 0.001538 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 100.539763 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1328d17a9a159ef62e5b8758e1725bdd') in 0.000819 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 18.545261 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41b6902d39cc217d1097c4eab3ac8991') in 0.001093 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 405.696348 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f78d899d6363b4a1e1d2349a6eea5b13') in 0.001312 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 26.792074 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c95781b61095d68c3a6d2978488dae27') in 0.000763 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 284.012201 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14a43c55173272803b815dcbc6369873') in 0.001127 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 49.687791 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '457121a1fee0237b2e5b6ec0e8701526') in 0.000942 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 13.911941 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f4a1568d7103bb04f27432a957ea660') in 0.001326 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 290.352135 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45f61c1aecd11c46c18a93f685b8bcd3') in 0.000722 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.937425 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e44d0910003cb508d80c3ca14f5a6370') in 0.001114 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 86.664860 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '470fb0c0eef6e817c8ae43e2310a80eb') in 0.000559 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 28.533139 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '588a5e76011a9d186294a35118e4dc8d') in 0.000984 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 71.649761 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f96999434b245fd34f192f47c609f492') in 0.000998 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.985715 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edde16aceda7a8dfeea1e3b19b962eab') in 0.000748 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 31.253083 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c093b4a38ad1e6050e244de6b5e76a03') in 0.000685 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 34.314194 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff87bae41a8d0336ffad9b18fd41c9a6') in 0.001370 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.759863 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f19ac6edb3d021ff56b85f29d2d6ec31') in 0.001119 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 23.500753 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45f4b59b5ccd5e232757d35e11249cdc') in 0.000897 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.871592 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea5c19c222eea6edb93c41f64602059c') in 0.001215 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 18.392813 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dea406fcb60ee29948f9c2788b72b08e') in 0.000893 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 20.198457 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86f168353dcae8fa27c5ff0739f08331') in 0.000857 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.015615 seconds.
+  path: Assets/Scripts/BlockMovement.cs
+  artifactKey: Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BlockMovement.cs using Guid(06d73bd7e9fd54b4ca75197c9bbc0c41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '814381094ab956e4220f5d8caa8db3fa') in 0.000911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.610 seconds
+Refreshing native plugins compatible for Editor in 4.91 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.275 seconds
+Domain Reload Profiling: 1882ms
+	BeginReloadAssembly (235ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (44ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (70ms)
+	RebuildCommonClasses (20ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (323ms)
+		LoadAssemblies (362ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (36ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (17ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (1275ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (326ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (206ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 4.60 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5538 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 64 unused Assets / (0.9 MB). Loaded Objects now: 6175.
+Memory consumption went from 202.8 MB to 201.9 MB.
+Total: 4.550700 ms (FindLiveObjects: 0.404900 ms CreateObjectMapping: 0.205600 ms MarkObjects: 3.689100 ms  DeleteObjects: 0.250300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
@@ -182,283 +832,233 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.349 seconds
-Refreshing native plugins compatible for Editor in 5.47 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.358 seconds
+Refreshing native plugins compatible for Editor in 5.49 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.970 seconds
-Domain Reload Profiling: 1314ms
-	BeginReloadAssembly (110ms)
+- Finished resetting the current domain, in  1.258 seconds
+Domain Reload Profiling: 1614ms
+	BeginReloadAssembly (115ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (25ms)
+	RebuildCommonClasses (19ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (21ms)
+	LoadAllAssembliesAndSetupDomain (194ms)
+		LoadAssemblies (238ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (1259ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (402ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (262ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 6.19 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5538 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 64 unused Assets / (0.9 MB). Loaded Objects now: 6180.
+Memory consumption went from 202.7 MB to 201.8 MB.
+Total: 3.171200 ms (FindLiveObjects: 0.335100 ms CreateObjectMapping: 0.141400 ms MarkObjects: 2.316100 ms  DeleteObjects: 0.377700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 76.961952 seconds.
+  path: Assets/Objects/Block_Type_I.prefab
+  artifactKey: Guid(2f147ba15f0d2244b978fd475d8d4388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Block_Type_I.prefab using Guid(2f147ba15f0d2244b978fd475d8d4388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed308b9460564eac206da465084e8711') in 0.133975 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 39
+========================================================================
+Received Import Request.
+  Time since last request: 0.230630 seconds.
+  path: Assets/Objects/Block_Type_L.prefab
+  artifactKey: Guid(b433cd1142784e64ca4d417365dd9803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Block_Type_L.prefab using Guid(b433cd1142784e64ca4d417365dd9803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea62c8018de1f3f097873bf8967edfab') in 0.014287 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Objects/Block_Type_Z.prefab
+  artifactKey: Guid(9266b2ac8472160449cbaca1f6e569d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Block_Type_Z.prefab using Guid(9266b2ac8472160449cbaca1f6e569d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37d58f81bf0bb99b204e6a1a4d91d199') in 0.007049 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 19.012617 seconds.
+  path: Assets/Objects/Block_Type_J.prefab
+  artifactKey: Guid(4a4003e6b7b22cd4a83d9e6a8e3c9ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Block_Type_J.prefab using Guid(4a4003e6b7b22cd4a83d9e6a8e3c9ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77e7a5da1a6c3a86de244baaeedf54d6') in 0.012981 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Objects/Block_Type_T.prefab
+  artifactKey: Guid(b177a189129895f489f89f6ddea8d129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Block_Type_T.prefab using Guid(b177a189129895f489f89f6ddea8d129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09231533266d70a02d3f22b0dd2af37d') in 0.013127 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Objects/Block_Type_O.prefab
+  artifactKey: Guid(ce97fe05b78ec4f47819a83bb5feddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Block_Type_O.prefab using Guid(ce97fe05b78ec4f47819a83bb5feddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fcce34caf894e009cfda28d681c5b6d') in 0.011008 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.727 seconds
+Refreshing native plugins compatible for Editor in 10.72 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.899 seconds
+Domain Reload Profiling: 2618ms
+	BeginReloadAssembly (213ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (17ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (412ms)
+		LoadAssemblies (474ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (50ms)
+			TypeCache.Refresh (13ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (23ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1899ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (433ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (96ms)
+			ProcessInitializeOnLoadAttributes (276ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 4.74 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5538 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 64 unused Assets / (0.9 MB). Loaded Objects now: 6222.
+Memory consumption went from 202.9 MB to 202.0 MB.
+Total: 2.864800 ms (FindLiveObjects: 0.255500 ms CreateObjectMapping: 0.163900 ms MarkObjects: 2.164700 ms  DeleteObjects: 0.280000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.374 seconds
+Refreshing native plugins compatible for Editor in 4.78 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.193 seconds
+Domain Reload Profiling: 1564ms
+	BeginReloadAssembly (125ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (24ms)
-	RebuildCommonClasses (18ms)
+		CreateAndSetChildDomain (27ms)
+	RebuildCommonClasses (19ms)
 	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (21ms)
-	LoadAllAssembliesAndSetupDomain (189ms)
-		LoadAssemblies (231ms)
+	initialDomainReloadingComplete (22ms)
+	LoadAllAssembliesAndSetupDomain (199ms)
+		LoadAssemblies (253ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
 		AnalyzeDomain (13ms)
 			TypeCache.Refresh (5ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (7ms)
-	FinalizeReload (970ms)
+	FinalizeReload (1194ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (293ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (53ms)
-			ProcessInitializeOnLoadAttributes (186ms)
-			ProcessInitializeOnLoadMethodAttributes (42ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
-Refreshing native plugins compatible for Editor in 4.43 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5538 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 64 unused Assets / (0.9 MB). Loaded Objects now: 6128.
-Memory consumption went from 198.0 MB to 197.2 MB.
-Total: 2.957200 ms (FindLiveObjects: 0.490100 ms CreateObjectMapping: 0.188000 ms MarkObjects: 1.981800 ms  DeleteObjects: 0.296400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.350 seconds
-Refreshing native plugins compatible for Editor in 5.04 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.278 seconds
-Domain Reload Profiling: 1624ms
-	BeginReloadAssembly (113ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (20ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (180ms)
-		LoadAssemblies (225ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (12ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1278ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (386ms)
+		SetupLoadedEditorAssemblies (383ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (64ms)
-			ProcessInitializeOnLoadAttributes (251ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (243ms)
+			ProcessInitializeOnLoadMethodAttributes (60ms)
 			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (14ms)
-Refreshing native plugins compatible for Editor in 5.84 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 6.58 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5538 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 64 unused Assets / (0.9 MB). Loaded Objects now: 6133.
-Memory consumption went from 198.1 MB to 197.2 MB.
-Total: 2.710300 ms (FindLiveObjects: 0.272700 ms CreateObjectMapping: 0.105300 ms MarkObjects: 2.048000 ms  DeleteObjects: 0.283600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.351 seconds
-Refreshing native plugins compatible for Editor in 4.75 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.203 seconds
-Domain Reload Profiling: 1551ms
-	BeginReloadAssembly (115ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (19ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (23ms)
-	LoadAllAssembliesAndSetupDomain (186ms)
-		LoadAssemblies (230ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (13ms)
-			TypeCache.Refresh (6ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1203ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (377ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (4ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (67ms)
-			ProcessInitializeOnLoadAttributes (244ms)
-			ProcessInitializeOnLoadMethodAttributes (53ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (13ms)
-Refreshing native plugins compatible for Editor in 6.14 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5538 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 64 unused Assets / (0.9 MB). Loaded Objects now: 6138.
-Memory consumption went from 198.1 MB to 197.2 MB.
-Total: 2.897800 ms (FindLiveObjects: 0.285800 ms CreateObjectMapping: 0.129700 ms MarkObjects: 2.191400 ms  DeleteObjects: 0.289900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 1027253.688419 seconds.
-  path: Assets/Objects/Block_Type_I.prefab
-  artifactKey: Guid(2f147ba15f0d2244b978fd475d8d4388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Block_Type_I.prefab using Guid(2f147ba15f0d2244b978fd475d8d4388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '211d03b8d0127a17ddfc7d967384780f') in 0.287104 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 39
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Objects/Block_Type_L.prefab
-  artifactKey: Guid(b433cd1142784e64ca4d417365dd9803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Block_Type_L.prefab using Guid(b433cd1142784e64ca4d417365dd9803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c07d5101f4ae37c5d47393f09a5190ab') in 0.013519 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 22
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Objects/Block_Type_S.prefab
-  artifactKey: Guid(0c1c1febe428c63408a1c44e9336331b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Block_Type_S.prefab using Guid(0c1c1febe428c63408a1c44e9336331b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c7b7e15f197347aefa614a0fcbeb247') in 0.010058 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 22
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Objects/Block_Type_O.prefab
-  artifactKey: Guid(ce97fe05b78ec4f47819a83bb5feddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Block_Type_O.prefab using Guid(ce97fe05b78ec4f47819a83bb5feddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1d9e8b24a9ace37042f43d970140d04') in 0.015493 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 21
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.670 seconds
-Refreshing native plugins compatible for Editor in 9.88 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.878 seconds
-Domain Reload Profiling: 2539ms
-	BeginReloadAssembly (208ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (18ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (52ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (39ms)
-	LoadAllAssembliesAndSetupDomain (369ms)
-		LoadAssemblies (419ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (49ms)
-			TypeCache.Refresh (11ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (25ms)
-			ResolveRequiredComponents (12ms)
-	FinalizeReload (1878ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (501ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (94ms)
-			ProcessInitializeOnLoadAttributes (315ms)
-			ProcessInitializeOnLoadMethodAttributes (69ms)
-			AfterProcessingInitializeOnLoad (10ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (21ms)
-Refreshing native plugins compatible for Editor in 23.12 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5538 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 64 unused Assets / (0.9 MB). Loaded Objects now: 6190.
+Unloading 64 unused Assets / (0.9 MB). Loaded Objects now: 6227.
 Memory consumption went from 202.8 MB to 201.9 MB.
-Total: 4.282800 ms (FindLiveObjects: 0.407600 ms CreateObjectMapping: 0.149700 ms MarkObjects: 3.298200 ms  DeleteObjects: 0.426300 ms)
+Total: 3.302900 ms (FindLiveObjects: 0.366700 ms CreateObjectMapping: 0.123500 ms MarkObjects: 2.400000 ms  DeleteObjects: 0.411800 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
