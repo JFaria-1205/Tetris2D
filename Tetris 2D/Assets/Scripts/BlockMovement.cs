@@ -15,15 +15,13 @@ public class BlockMovement : MonoBehaviour
     private readonly float rotateDistance = -90f;
     private bool pauseRotations = false;
 
+    //Gravity values (drop speed)
     private float gravity;
     private float currentGravityValue;
     private float gravityIncreased = 2.36f;
     private float gravityTimer = 0;
     private float waitTimer = 0.01667f;
 
-    //private float moveSpeed;
-    //private float currentBlockSpeed;
-    //private float moveSpeedIncreased = 0.04f;
     private bool blockActive = true;
     private Array childrenTransforms;
 
@@ -57,7 +55,7 @@ public class BlockMovement : MonoBehaviour
                     blockActive = false;
             }            
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.25f);
         Lock();
     }
 
