@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] LayerMask bounds;
     [SerializeField] Text UI_Score;
     [SerializeField] Text UI_Level;
+
+    [SerializeField] GameObject singleBlock;
     public int currentLevel { get; private set; }
     public float currentGravity { get; private set; }
     private List<float> gravityValues = new List<float>();
@@ -62,8 +64,26 @@ public class GameManager : MonoBehaviour
                 UpdateLevelAndGravity();
         }
 
-        //spawn next block
-        Invoke("SpawnBlock", 0.75f);
+        if (LoseCondition())
+            GameOver();
+        else //spawn next block
+            Invoke("SpawnBlock", 0.75f);
+    }
+
+    private bool LoseCondition()
+    {
+        var childrenTransforms = currentBlock.GetComponentsInChildren<Transform>();
+        foreach (Transform child in childrenTransforms)
+        {
+            if (child.position.y > 4.5f)
+                return true;
+        }
+        return false;
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("Game over loser, you fucking suck");
     }
 
     private void AwardScorePoints(int numberOfRowsCleared)
@@ -97,6 +117,7 @@ public class GameManager : MonoBehaviour
     private void RowsCleared(out int amountCleared)
     {
         amountCleared = 0;
+        float highestRowYValue = -5;
 
         List<Transform> childrenTransforms = currentBlock.GetComponentsInChildren<Transform>().ToList();
         childrenTransforms.Remove(currentBlock.transform);
@@ -128,12 +149,11 @@ public class GameManager : MonoBehaviour
             int blocksHit = 0;
             while (blocksHit < 10)
             {
-
                 RaycastHit2D raycastHit2D = Physics2D.Raycast((new Vector2(castStartPos, childToCheck.position.y)), Vector2.right, 0.1f, bounds);
                 if (raycastHit2D.collider != null) //if you hit a block
                 {
                     //Debug.DrawLine((new Vector2(castStartPos, childToCheck.position.y)), (new Vector2(castStartPos + 0.1f, childToCheck.position.y)), Color.green, 2f);
-                    Debug.Log(raycastHit2D.collider.name);   
+                    //Debug.Log(raycastHit2D.collider.name);   
                     blocksToBeCleared.Add(raycastHit2D.collider.transform);
                     castStartPos += 0.5f;
                     blocksHit++;
@@ -142,14 +162,16 @@ public class GameManager : MonoBehaviour
                 {
                     //Debug.DrawLine((new Vector2(castStartPos, childToCheck.position.y)), (new Vector2(castStartPos + 0.1f, childToCheck.position.y)), Color.red, 2f);
                     break;
-                }
-                    
+                }                    
             }
 
-            Debug.Log("Blocks hit for row at y = " + childToCheck.position.y.ToString() + ": " + blocksHit);
+            //Debug.Log("Blocks hit for row at y = " + childToCheck.position.y.ToString() + ": " + blocksHit);
 
             if (blocksHit >= 10)
             {
+                if (childToCheck.position.y >= highestRowYValue)
+                    highestRowYValue = childToCheck.position.y;
+
                 foreach (Transform child in blocksToBeCleared)
                 {
                     //Debug.Log("Child to destroy: Child Name: " + child.name + " | Parent Name: " + child.parent.gameObject.name + " | Position: " + child.position);
@@ -159,6 +181,21 @@ public class GameManager : MonoBehaviour
             }
 
             blocksToBeCleared.Clear();
+        }
+
+        if (amountCleared > 0)
+            MoveBlocksDownAfterClear(highestRowYValue, amountCleared);
+    }
+
+    private void MoveBlocksDownAfterClear(float highestRowClearedYPos, int rowsCleared)
+    {
+        var blocksToBeMoved = GameObject.FindGameObjectsWithTag("Block");      
+        foreach (GameObject child in blocksToBeMoved)
+        {
+            if (child.transform.position.y > highestRowClearedYPos)
+            {
+                child.transform.position = new Vector3(child.transform.position.x, child.transform.position.y - (0.5f * rowsCleared), child.transform.position.z);
+            }
         }
     }
 

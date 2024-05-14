@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7039408188119531942}
   m_Layer: 6
   m_Name: Block_Type_I
-  m_TagString: Block
+  m_TagString: Tetrimono
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,6 +8,8 @@ TagManager:
   - BottomBound
   - LeftBound
   - RightBound
+  - Tetrimono
+  - UI
   layers:
   - Default
   - TransparentFX
