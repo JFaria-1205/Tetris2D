@@ -82,25 +82,32 @@ public class GameManager : MonoBehaviour
             int blocksHit = 0;
             while (blocksHit < 10)
             {
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(new Vector2(castStartPos, childToCheck.position.y), Vector2.right, 1f, bounds);
 
+                RaycastHit2D raycastHit2D = Physics2D.Raycast((new Vector2(castStartPos, childToCheck.position.y)), Vector2.right, 0.1f, bounds);
                 if (raycastHit2D.collider != null) //if you hit a block
                 {
-                    blocksToBeCleared.Add(raycastHit2D.transform);
+                    //Debug.DrawLine((new Vector2(castStartPos, childToCheck.position.y)), (new Vector2(castStartPos + 0.1f, childToCheck.position.y)), Color.green, 2f);
+                    Debug.Log(raycastHit2D.collider.name);   
+                    blocksToBeCleared.Add(raycastHit2D.collider.transform);
                     castStartPos += 0.5f;
                     blocksHit++;
                 }
                 else
+                {
+                    //Debug.DrawLine((new Vector2(castStartPos, childToCheck.position.y)), (new Vector2(castStartPos + 0.1f, childToCheck.position.y)), Color.red, 2f);
                     break;
+                }
+                    
             }
-            
-            Debug.Log("Blocks hit for row at " + childToCheck.position.y.ToString() + ": " + blocksHit);
+
+            Debug.Log("Blocks hit for row at y = " + childToCheck.position.y.ToString() + ": " + blocksHit);
 
             if (blocksHit >= 10)
             {
                 foreach (Transform child in blocksToBeCleared)
                 {
-                    Debug.Log("Remove at: " + child.position);
+                    Debug.Log("Child to destroy: Child Name: " + child.name + " | Parent Name: " + child.parent.gameObject.name + " | Position: " + child.position);
+                    Destroy(child.gameObject);
                 }
                 amountCleared++;
             }

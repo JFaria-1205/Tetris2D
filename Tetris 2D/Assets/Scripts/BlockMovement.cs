@@ -62,7 +62,7 @@ public class BlockMovement : MonoBehaviour
     private void Lock()
     {
         StopAllCoroutines();
-
+        
         foreach (Transform childTransform in childrenTransforms)
         {
             childTransform.gameObject.layer = LayerMask.NameToLayer("Bounds");

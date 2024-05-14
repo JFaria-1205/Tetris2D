@@ -818,6 +818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731a72e727ebb2a4e928ca34e22a4f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounds:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &1605788343
 MonoBehaviour:
   m_ObjectHideFlags: 0
