@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,8 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text UI_Score;
     [SerializeField] Text UI_Level;    
     [SerializeField] GameObject singleBlock;
-    [SerializeField] List<GameObject> blockTypesList = new List<GameObject>();
-    [SerializeField] GameObject nextBlockUIElement;
+    [SerializeField] RawImage nextBlockImage;
     public int currentLevel { get; private set; }
     public float currentGravity { get; private set; }
     private List<float> gravityValues = new List<float>();
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     BlockSpawner blockSpawner;
     GameObject currentBlock;
-    GameObject nextBlock;
+    GameObject nextBlock = null;
 
 
     void Start()
@@ -48,9 +48,9 @@ public class GameManager : MonoBehaviour
 
     private void SpawnBlock()
     {
-        blockSpawner.SpawnBlock(out currentBlock, out int nextBlockIndex);
+        blockSpawner.SpawnBlock(out currentBlock, out GameObject nextBlock);
         GetComponent<PlayerController>().UpdateBlock(currentBlock);
-        //UpdateNextBlockUI(nextBlockIndex);
+        UpdateNextBlockUI(nextBlock);
     }
 
     public void BlockLocked()
@@ -249,12 +249,9 @@ public class GameManager : MonoBehaviour
         UI_Level.text = ("Level: " + currentLevel.ToString());
     }
 
-    private void UpdateNextBlockUI(int nextBlockIndex)
+    private void UpdateNextBlockUI(GameObject nextBlock)
     {
-        if (nextBlock != null)
-            Destroy(nextBlock);
-
-        nextBlock = Instantiate(blockTypesList[nextBlockIndex], nextBlockUIElement.transform);
+        nextBlockImage.texture = AssetPreview.GetAssetPreview(nextBlock);
     }
     #endregion
 }
