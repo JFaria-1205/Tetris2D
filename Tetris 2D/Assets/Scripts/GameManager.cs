@@ -11,17 +11,21 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] LayerMask bounds;
     [SerializeField] Text UI_Score;
-    [SerializeField] Text UI_Level;
-
+    [SerializeField] Text UI_Level;    
     [SerializeField] GameObject singleBlock;
+    [SerializeField] List<GameObject> blockTypesList = new List<GameObject>();
+    [SerializeField] GameObject nextBlockUIElement;
     public int currentLevel { get; private set; }
     public float currentGravity { get; private set; }
     private List<float> gravityValues = new List<float>();
+
     private int totalLinesCleared = 0;
     private int linesClearedInLevel = 0;
     private int playerScore = 0;
+
     BlockSpawner blockSpawner;
     GameObject currentBlock;
+    GameObject nextBlock;
 
 
     void Start()
@@ -44,8 +48,9 @@ public class GameManager : MonoBehaviour
 
     private void SpawnBlock()
     {
-        blockSpawner.SpawnBlock(out currentBlock);
+        blockSpawner.SpawnBlock(out currentBlock, out int nextBlockIndex);
         GetComponent<PlayerController>().UpdateBlock(currentBlock);
+        //UpdateNextBlockUI(nextBlockIndex);
     }
 
     public void BlockLocked()
@@ -242,6 +247,14 @@ public class GameManager : MonoBehaviour
     private void UpdateLevelUI()
     {
         UI_Level.text = ("Level: " + currentLevel.ToString());
+    }
+
+    private void UpdateNextBlockUI(int nextBlockIndex)
+    {
+        if (nextBlock != null)
+            Destroy(nextBlock);
+
+        nextBlock = Instantiate(blockTypesList[nextBlockIndex], nextBlockUIElement.transform);
     }
     #endregion
 }

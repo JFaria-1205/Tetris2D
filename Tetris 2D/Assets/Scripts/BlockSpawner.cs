@@ -5,12 +5,18 @@ using System;
 
 public class BlockSpawner : MonoBehaviour
 {
-    [SerializeField] List<GameObject> blockTypes = new List<GameObject>();
+    [SerializeField] public List<GameObject> blockTypes = new List<GameObject>();
     private Vector3 initialSpawnPoint = new Vector3(0, 4.5f, 0);
+    private int nextBlockToSpawnIndex;
 
-    public void SpawnBlock(out GameObject currentBlock)
+    private void Start()
     {
-        GameObject spawnedBlock = Instantiate(blockTypes[UnityEngine.Random.Range(0, blockTypes.Count)], initialSpawnPoint, Quaternion.identity);
+        nextBlockToSpawnIndex = UnityEngine.Random.Range(0, blockTypes.Count);
+    }
+
+    public void SpawnBlock(out GameObject currentBlock, out int nextBlockIndex)
+    {
+        GameObject spawnedBlock = Instantiate(blockTypes[nextBlockToSpawnIndex], initialSpawnPoint, Quaternion.identity);        
 
         bool checkSpawn = true;
         while (checkSpawn)
@@ -19,6 +25,8 @@ public class BlockSpawner : MonoBehaviour
         }
 
         currentBlock = spawnedBlock;
+        nextBlockToSpawnIndex = UnityEngine.Random.Range(0, blockTypes.Count);
+        nextBlockIndex = nextBlockToSpawnIndex;
 
         spawnedBlock.GetComponent<BlockMovement>().InitializeBlock();
     }

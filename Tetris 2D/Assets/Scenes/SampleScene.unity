@@ -935,6 +935,15 @@ MonoBehaviour:
   UI_Score: {fileID: 450838347}
   UI_Level: {fileID: 1910073555}
   singleBlock: {fileID: 1804328303141098616, guid: 8e483707179d8d1469d44352d59905c5, type: 3}
+  blockTypesList:
+  - {fileID: 6285454407639006040, guid: 790c03cd8b290544fa9345db0fcfd18b, type: 3}
+  - {fileID: 6285454407639006040, guid: 37906900c73eaff4993ab8bc6d7b2b6e, type: 3}
+  - {fileID: 6285454407639006040, guid: 98e445db9cd2ae64784c84e15adc546a, type: 3}
+  - {fileID: 7405654861653013517, guid: 64713e7c8615eb14cb4b6e5a0e5f2425, type: 3}
+  - {fileID: 6285454407639006040, guid: 3ccf2b0455000f44490b065d7b8c3ce9, type: 3}
+  - {fileID: 7405654861653013517, guid: 994729c68053b544fbbf07fe639ff563, type: 3}
+  - {fileID: 6285454407639006040, guid: 735555f9797625c41bf30d28d3732940, type: 3}
+  nextBlockUIElement: {fileID: 363243078}
 --- !u!114 &1605788343
 MonoBehaviour:
   m_ObjectHideFlags: 0
