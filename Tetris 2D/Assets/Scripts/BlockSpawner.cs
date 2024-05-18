@@ -7,16 +7,20 @@ public class BlockSpawner : MonoBehaviour
 {
     [SerializeField] public List<GameObject> blockTypes = new List<GameObject>();
     private Vector3 initialSpawnPoint = new Vector3(0, 4.5f, 0);
-    private int nextBlockIndex;
+    private List<GameObject> spawnBag = new List<GameObject>();
+    private GameObject nextBlockToSpawn;
 
-    private void Start()
+    private void Awake()
     {
-        nextBlockIndex = UnityEngine.Random.Range(0, blockTypes.Count);
+        RefreshSpawnBag();
     }
 
     public void SpawnBlock(out GameObject currentBlock, out GameObject nextBlock)
     {
-        GameObject spawnedBlock = Instantiate(blockTypes[nextBlockIndex], initialSpawnPoint, Quaternion.identity);
+        if (nextBlockToSpawn == null)
+            nextBlockToSpawn = GetBlock();
+
+        GameObject spawnedBlock = Instantiate(nextBlockToSpawn, initialSpawnPoint, Quaternion.identity);
 
         bool checkSpawn = true;
         while (checkSpawn)
@@ -25,8 +29,8 @@ public class BlockSpawner : MonoBehaviour
         }
 
         currentBlock = spawnedBlock;
-        nextBlockIndex = UnityEngine.Random.Range(0, blockTypes.Count);
-        nextBlock = blockTypes[nextBlockIndex];
+        nextBlockToSpawn = GetBlock();
+        nextBlock = nextBlockToSpawn;
 
         spawnedBlock.GetComponent<BlockMovement>().InitializeBlock();
     }
@@ -40,10 +44,32 @@ public class BlockSpawner : MonoBehaviour
         foreach (Transform childTransform in childrenTransforms)
         {
             if (childTransform.position.y > 4.5f)
-            {              
+            {
                 blockToCheck.transform.position += new Vector3(0, -0.5f, 0);
                 checkAgain = true;
             }
+        }
+    }
+
+    private GameObject GetBlock()
+    {
+        if (spawnBag.Count <= 0 || spawnBag == null)
+        {
+            RefreshSpawnBag();
+        }
+
+        GameObject block = spawnBag[UnityEngine.Random.Range(0, spawnBag.Count)];
+        spawnBag.Remove(block);
+        return block;
+    }
+
+    private void RefreshSpawnBag()
+    {
+        spawnBag.Clear();
+
+        foreach (GameObject blockType in blockTypes)
+        {
+            spawnBag.Add(blockType);
         }
     }
 }

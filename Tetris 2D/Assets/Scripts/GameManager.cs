@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] LayerMask bounds;
     [SerializeField] Text UI_Score;
-    [SerializeField] Text UI_Level;    
+    [SerializeField] Text UI_Level;
+    [SerializeField] Text UI_LineClears;
+    [SerializeField] Text UI_HighScore;
     [SerializeField] GameObject singleBlock;
     [SerializeField] RawImage nextBlockImage;
     public int currentLevel { get; private set; }
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
     private int totalLinesCleared = 0;
     private int linesClearedInLevel = 0;
     private int playerScore = 0;
+    private int playerHighScore;
 
     BlockSpawner blockSpawner;
     GameObject currentBlock;
@@ -30,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        InitializeGame();        
+        InitializeGame();
     }
 
     private void InitializeGame()
@@ -41,6 +44,8 @@ public class GameManager : MonoBehaviour
         PopulateGravityList();
         UpdateLevelAndGravity(1);
         UpdateLevelUI();
+
+        UpdateLineClearsUI();
 
         blockSpawner = GetComponent<BlockSpawner>();
         SpawnBlock();
@@ -57,13 +62,14 @@ public class GameManager : MonoBehaviour
     {
         //check for clear and award points if cleared and update lines cleared
         RowsCleared(out int amountOfRowsCleared);
-        Debug.Log("Rows Cleared: " + amountOfRowsCleared);
+        //Debug.Log("Rows Cleared: " + amountOfRowsCleared);
 
         if (amountOfRowsCleared > 0)
         {
             AwardScorePoints(amountOfRowsCleared);
             linesClearedInLevel += amountOfRowsCleared;
             totalLinesCleared += amountOfRowsCleared;
+            UpdateLineClearsUI();
 
             if (linesClearedInLevel >= 10 && currentLevel < 15)
                 UpdateLevelAndGravity();
@@ -217,6 +223,8 @@ public class GameManager : MonoBehaviour
         currentGravity = gravityValues[currentLevel-0];
 
         linesClearedInLevel = 0;
+
+        UpdateLevelUI();
     }
 
     private void PopulateGravityList()
@@ -241,17 +249,27 @@ public class GameManager : MonoBehaviour
     #region UI_Functions
     private void UpdateScoreUI()
     {
-        UI_Score.text = ("Score: " + playerScore.ToString());
+        UI_Score.text = (playerScore.ToString());
+        if (playerScore >= playerHighScore)
+        {
+            playerHighScore = playerScore;
+            UI_HighScore.text = (playerHighScore.ToString());
+        }
     }
 
     private void UpdateLevelUI()
     {
-        UI_Level.text = ("Level: " + currentLevel.ToString());
+        UI_Level.text = (currentLevel.ToString());
     }
 
     private void UpdateNextBlockUI(GameObject nextBlock)
     {
         nextBlockImage.texture = AssetPreview.GetAssetPreview(nextBlock);
+    }
+
+    private void UpdateLineClearsUI()
+    {
+        UI_LineClears.text = ("Lines : " + totalLinesCleared.ToString());
     }
     #endregion
 }
