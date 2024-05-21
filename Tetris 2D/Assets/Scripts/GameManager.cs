@@ -152,7 +152,8 @@ public class GameManager : MonoBehaviour
                 childrenToCheckRows.Add(child1);
         }
 
-        List<Transform> blocksToBeCleared = new List<Transform>();
+        List<Transform> blocksToCheck = new List<Transform>();
+        List<GameObject> parentsToBeCleared = new List<GameObject>();
 
         foreach (Transform childToCheck in childrenToCheckRows)
         {
@@ -165,7 +166,7 @@ public class GameManager : MonoBehaviour
                 {
                     //Debug.DrawLine((new Vector2(castStartPos, childToCheck.position.y)), (new Vector2(castStartPos + 0.1f, childToCheck.position.y)), Color.green, 2f);
                     //Debug.Log(raycastHit2D.collider.name);   
-                    blocksToBeCleared.Add(raycastHit2D.collider.transform);
+                    blocksToCheck.Add(raycastHit2D.collider.transform);
                     castStartPos += 0.5f;
                     blocksHit++;
                 }
@@ -183,19 +184,40 @@ public class GameManager : MonoBehaviour
                 if (childToCheck.position.y >= highestRowYValue)
                     highestRowYValue = childToCheck.position.y;
 
-                foreach (Transform child in blocksToBeCleared)
+                foreach (Transform child in blocksToCheck)
                 {
+                    GameObject parent = child.parent.gameObject;
+                    
                     //Debug.Log("Child to destroy: Child Name: " + child.name + " | Parent Name: " + child.parent.gameObject.name + " | Position: " + child.position);
                     Destroy(child.gameObject);
+
+                    if (!parentsToBeCleared.Contains(parent))
+                        parentsToBeCleared.Add(parent);
                 }
                 amountCleared++;
             }
 
-            blocksToBeCleared.Clear();
+            blocksToCheck.Clear();
         }
+
+        CheckForEmptyParents(parentsToBeCleared);
 
         if (amountCleared > 0)
             MoveBlocksDownAfterClear(highestRowYValue, amountCleared);
+    }
+
+    private void CheckForEmptyParents(List<GameObject> parentsToCheck)
+    {
+        Debug.Log("Check for empty parents. Parents to check: " + parentsToCheck.Count);
+
+        foreach (GameObject parent in parentsToCheck)
+        {
+            Debug.Log("Object " + parent.name + "child count: " + parent.GetComponentsInChildren<Transform>().Length);
+            if (parent.transform.childCount <= 1)
+            {
+                Debug.Log("Parent empty; Delete " + parent.name);
+            }
+        }
     }
 
     private void MoveBlocksDownAfterClear(float highestRowClearedYPos, int rowsCleared)
