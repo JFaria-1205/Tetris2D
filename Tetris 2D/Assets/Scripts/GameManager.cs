@@ -153,7 +153,6 @@ public class GameManager : MonoBehaviour
         }
 
         List<Transform> blocksToCheck = new List<Transform>();
-        List<GameObject> parentsToBeCleared = new List<GameObject>();
 
         foreach (Transform childToCheck in childrenToCheckRows)
         {
@@ -186,38 +185,17 @@ public class GameManager : MonoBehaviour
 
                 foreach (Transform child in blocksToCheck)
                 {
-                    GameObject parent = child.parent.gameObject;
-                    
-                    //Debug.Log("Child to destroy: Child Name: " + child.name + " | Parent Name: " + child.parent.gameObject.name + " | Position: " + child.position);
-                    Destroy(child.gameObject);
-
-                    if (!parentsToBeCleared.Contains(parent))
-                        parentsToBeCleared.Add(parent);
+                    child.parent.gameObject.GetComponent<BlockClearingTracker>().RemoveChild(child.gameObject);
                 }
+
                 amountCleared++;
             }
 
             blocksToCheck.Clear();
         }
 
-        CheckForEmptyParents(parentsToBeCleared);
-
         if (amountCleared > 0)
             MoveBlocksDownAfterClear(highestRowYValue, amountCleared);
-    }
-
-    private void CheckForEmptyParents(List<GameObject> parentsToCheck)
-    {
-        Debug.Log("Check for empty parents. Parents to check: " + parentsToCheck.Count);
-
-        foreach (GameObject parent in parentsToCheck)
-        {
-            Debug.Log("Object " + parent.name + "child count: " + parent.GetComponentsInChildren<Transform>().Length);
-            if (parent.transform.childCount <= 1)
-            {
-                Debug.Log("Parent empty; Delete " + parent.name);
-            }
-        }
     }
 
     private void MoveBlocksDownAfterClear(float highestRowClearedYPos, int rowsCleared)

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2976994849218416129}
   - component: {fileID: 7039408188119531942}
+  - component: {fileID: 8697079401838636047}
   m_Layer: 6
   m_Name: Block_Type_L
   m_TagString: Tetrimono
@@ -52,6 +53,18 @@ MonoBehaviour:
   bounds:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &8697079401838636047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285454407639006040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97edee19fa8a3841b92945855902794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3793423330480697730
 PrefabInstance:
   m_ObjectHideFlags: 0
