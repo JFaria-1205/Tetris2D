@@ -27,10 +27,10 @@ if not
   DONE
 
 true fix:
-It seems as though trying to rotate the block in every direction before giving up on the rotation was wrong. apparently you either rotate the direction you want, or the opposite way, or else no rotation, but I was trying to rotate the block a third time (180 degrees from original position before first rotation) and that wasn't supposed to be a feature. Also moving the block down to fix a rotation isn't good, so that was removed. Streamlined and refactored rotation code no to have 3 nested while-loops which was also causing issues.
+It seems as though trying to rotate the block in every direction before giving up on the rotation was wrong. apparently you either rotate the direction you want, or the opposite way, or else no rotation, but I was trying to rotate the block a third time (180 degrees from original position before first rotation) and that isn't a feature in the tetris game. Also moving the block down to fix a rotation isn't good, so that was removed. Streamlined and refactored rotation code no to have 3 nested while-loops which was also causing issues.
 
 Need to:
-fix tetrimonos with no children staying in scene => will cause major lag for later levels
+FIXED - fix tetrimonos with no children staying in scene => will cause major lag for later levels
 fix game over not working
 add high score save
 add hold to move
