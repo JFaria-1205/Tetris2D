@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class BlockSpawner : MonoBehaviour
 {
@@ -9,14 +10,17 @@ public class BlockSpawner : MonoBehaviour
     private Vector3 initialSpawnPoint = new Vector3(0, 4.5f, 0);
     private List<GameObject> spawnBag = new List<GameObject>();
     private GameObject nextBlockToSpawn;
+    [SerializeField] LayerMask bounds;
 
     private void Awake()
     {
         RefreshSpawnBag();
     }
 
-    public void SpawnBlock(out GameObject currentBlock, out GameObject nextBlock)
+    public void SpawnBlock(out GameObject currentBlock, out GameObject nextBlock, out bool gameOver)
     {
+        gameOver = false;
+
         if (nextBlockToSpawn == null)
             nextBlockToSpawn = GetBlock();
 
@@ -32,7 +36,12 @@ public class BlockSpawner : MonoBehaviour
         nextBlockToSpawn = GetBlock();
         nextBlock = nextBlockToSpawn;
 
-        spawnedBlock.GetComponent<BlockMovement>().InitializeBlock();
+        if (CheckGameOver(spawnedBlock))
+            gameOver = true;
+        else
+            spawnedBlock.GetComponent<BlockMovement>().InitializeBlock();
+
+        
     }
 
     private void CheckBlockSpawnPoint(GameObject blockToCheck, out bool checkAgain)
@@ -71,5 +80,20 @@ public class BlockSpawner : MonoBehaviour
         {
             spawnBag.Add(blockType);
         }
+    }
+
+    private bool CheckGameOver(GameObject currBlock)
+    {
+        Array childrenTransforms = currBlock.GetComponentsInChildren<Transform>();
+
+        foreach (Transform childTransform in childrenTransforms)
+        {
+            if (Physics2D.BoxCast(childTransform.position, new Vector2(0.25f, 0.25f), 0f, Vector2.zero, 0f, bounds).collider != null) //if child is out of bounds
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

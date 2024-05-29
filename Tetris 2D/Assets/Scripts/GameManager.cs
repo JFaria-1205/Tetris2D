@@ -53,9 +53,12 @@ public class GameManager : MonoBehaviour
 
     private void SpawnBlock()
     {
-        blockSpawner.SpawnBlock(out currentBlock, out GameObject nextBlock);
+        blockSpawner.SpawnBlock(out currentBlock, out GameObject nextBlock, out bool gameOver);
         GetComponent<PlayerController>().UpdateBlock(currentBlock);
         UpdateNextBlockUI(nextBlock);
+
+        if (gameOver)
+            GameOver();
     }
 
     public void BlockLocked()
@@ -75,21 +78,7 @@ public class GameManager : MonoBehaviour
                 UpdateLevelAndGravity();
         }
 
-        if (LoseCondition())
-            GameOver();
-        else //spawn next block
-            Invoke("SpawnBlock", 0.75f);
-    }
-
-    private bool LoseCondition()
-    {
-        var childrenTransforms = currentBlock.GetComponentsInChildren<Transform>();
-        foreach (Transform child in childrenTransforms)
-        {
-            if (child.position.y > 4.5f)
-                return true;
-        }
-        return false;
+        Invoke("SpawnBlock", 0.75f);
     }
 
     private void GameOver()

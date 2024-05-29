@@ -1471,6 +1471,9 @@ MonoBehaviour:
   - {fileID: 6285454407639006040, guid: 0c1c1febe428c63408a1c44e9336331b, type: 3}
   - {fileID: 7405654861653013517, guid: b177a189129895f489f89f6ddea8d129, type: 3}
   - {fileID: 6285454407639006040, guid: 9266b2ac8472160449cbaca1f6e569d2, type: 3}
+  bounds:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1607798348
 GameObject:
   m_ObjectHideFlags: 0
