@@ -384,11 +384,15 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.26f1-x86_64/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.26f1-x86_64/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Scripts/BlockClearingTracker.cs"
-"Assets/Scripts/BlockMovement.cs"
-"Assets/Scripts/BlockSpawner.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/MM_Manager.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/Saving and Loading/HighScoreData.cs"
+"Assets/Scripts/Saving and Loading/PlayerData.cs"
+"Assets/Scripts/Saving and Loading/SaveSystem.cs"
+"Assets/Scripts/Tetromino Scripts/BlockClearingTracker.cs"
+"Assets/Scripts/Tetromino Scripts/BlockMovement.cs"
+"Assets/Scripts/Tetromino Scripts/BlockSpawner.cs"
 -langversion:9.0
 /deterministic
 /optimize+

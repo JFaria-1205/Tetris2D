@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private int totalLinesCleared = 0;
     private int linesClearedInLevel = 0;
     private int playerScore = 0;
-    private int playerHighScore;
+    private int playerHighScore = 0;
 
     BlockSpawner blockSpawner;
     GameObject currentBlock;
@@ -38,8 +38,10 @@ public class GameManager : MonoBehaviour
 
     private void InitializeGame()
     {
+        playerHighScore = FindObjectOfType<HighScoreData>().GetHighScore();
+
         playerScore = 0;
-        UpdateScoreUI();
+        UpdateScoreUI(true);
 
         PopulateGravityList();
         UpdateLevelAndGravity(1);
@@ -236,13 +238,22 @@ public class GameManager : MonoBehaviour
     }
 
     #region UI_Functions
-    private void UpdateScoreUI()
+    private void UpdateScoreUI(bool initialize = false)
     {
         UI_Score.text = (playerScore.ToString());
-        if (playerScore >= playerHighScore)
+
+        if (initialize)
         {
-            playerHighScore = playerScore;
             UI_HighScore.text = (playerHighScore.ToString());
+        }
+        else
+        {
+            if (playerScore > playerHighScore)
+            {
+                playerHighScore = playerScore;
+                UI_HighScore.text = (playerHighScore.ToString());
+                FindObjectOfType<HighScoreData>().SaveNewHighScore(playerHighScore);
+            }
         }
     }
 
