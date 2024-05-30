@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text UI_HighScore;
     [SerializeField] GameObject singleBlock;
     [SerializeField] RawImage nextBlockImage;
+
+    
     public int currentLevel { get; private set; }
     public float currentGravity { get; private set; }
     private List<float> gravityValues = new List<float>();
@@ -29,7 +31,6 @@ public class GameManager : MonoBehaviour
     BlockSpawner blockSpawner;
     GameObject currentBlock;
     GameObject nextBlock = null;
-
 
     void Start()
     {
@@ -80,7 +81,7 @@ public class GameManager : MonoBehaviour
                 UpdateLevelAndGravity();
         }
 
-        Invoke("SpawnBlock", 0.75f);
+        Invoke("SpawnBlock", 1f);
     }
 
     private void GameOver()

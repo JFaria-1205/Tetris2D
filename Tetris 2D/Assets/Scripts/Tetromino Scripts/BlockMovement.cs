@@ -33,6 +33,14 @@ public class BlockMovement : MonoBehaviour
         gravity = currentGravityValue;
     }
 
+    public void GamePaused(bool paused)
+    {
+        if (paused)
+            StopAllCoroutines();
+        else
+            StartCoroutine(AutoMoveDown());
+    }
+
     public void InitializeBlock()
     {
         StartCoroutine(AutoMoveDown());
@@ -55,7 +63,7 @@ public class BlockMovement : MonoBehaviour
                     blockActive = false;
             }            
         }
-        yield return new WaitForSeconds(0.25f);
+        //yield return new WaitForSeconds(0.25f);
         Lock();
     }
 

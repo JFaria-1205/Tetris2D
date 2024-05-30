@@ -12,9 +12,16 @@ public class BlockSpawner : MonoBehaviour
     private GameObject nextBlockToSpawn;
     [SerializeField] LayerMask bounds;
 
+    private PauseMenu pauseMenu;
+
     private void Awake()
     {
         RefreshSpawnBag();
+    }
+
+    private void Start()
+    {
+        pauseMenu = FindObjectOfType<PauseMenu>();
     }
 
     public void SpawnBlock(out GameObject currentBlock, out GameObject nextBlock, out bool gameOver)
@@ -38,7 +45,7 @@ public class BlockSpawner : MonoBehaviour
 
         if (CheckGameOver(spawnedBlock))
             gameOver = true;
-        else
+        else if (!FindObjectOfType<PauseMenu>().IsGamePaused())
             spawnedBlock.GetComponent<BlockMovement>().InitializeBlock();
 
         
