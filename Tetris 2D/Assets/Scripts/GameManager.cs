@@ -18,7 +18,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject singleBlock;
     [SerializeField] RawImage nextBlockImage;
 
-    
+    [SerializeField] GameObject gameOver_Menu;
+
+
     public int currentLevel { get; private set; }
     public float currentGravity { get; private set; }
     private List<float> gravityValues = new List<float>();
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
     private void InitializeGame()
     {
         playerHighScore = FindObjectOfType<HighScoreData>().GetHighScore();
+        gameOver_Menu.SetActive(false);
 
         playerScore = 0;
         UpdateScoreUI(true);
@@ -87,6 +90,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("Game over loser, you fucking suck");
+        gameOver_Menu.SetActive(true);
     }
 
     private void AwardScorePoints(int numberOfRowsCleared)
@@ -239,6 +243,11 @@ public class GameManager : MonoBehaviour
     }
 
     #region UI_Functions
+    public void RetryButton()
+    {
+        Application.LoadLevel(1);
+    }
+
     private void UpdateScoreUI(bool initialize = false)
     {
         UI_Score.text = (playerScore.ToString());
