@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using Unity.VisualScripting;
 
 public class BlockSpawner : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> blockTypes = new List<GameObject>();
+    [SerializeField] List<GameObject> blockTypes = new List<GameObject>();
+    [SerializeField] List<Image> blockImages = new List<Image>();
     private Vector3 initialSpawnPoint = new Vector3(0, 4.5f, 0);
     private List<GameObject> spawnBag = new List<GameObject>();
     private GameObject nextBlockToSpawn;

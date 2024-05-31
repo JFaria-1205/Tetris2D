@@ -18,7 +18,7 @@ public class BlockMovement : MonoBehaviour
     //Gravity values (drop speed)
     private float gravity;
     private float currentGravityValue;
-    private float gravityIncreased = 2.36f;
+    private float gravityIncreased = 0.475f;
     private float gravityTimer = 0;
     private float waitTimer = 0.01667f;
 
@@ -43,6 +43,7 @@ public class BlockMovement : MonoBehaviour
 
     public void InitializeBlock()
     {
+        FindObjectOfType<PlayerController>().ResetMovement();
         StartCoroutine(AutoMoveDown());
     }
 
@@ -60,7 +61,12 @@ public class BlockMovement : MonoBehaviour
                 gravityTimer = 0;
 
                 if (!MoveDown())
-                    blockActive = false;
+                {
+                    yield return new WaitForSeconds(0.16f);
+                    if (!MoveDown())
+                        blockActive = false;
+                }
+                    
             }            
         }
         //yield return new WaitForSeconds(0.25f);

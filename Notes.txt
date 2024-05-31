@@ -33,9 +33,17 @@ Need to:
 DONE - fix tetrimonos with no children staying in scene => will cause major lag for later levels
 DONE - fix game over not working
 DONE - add high score save
-add hold to move
-add block type specific statistics
+DONE - add hold to move
 DONE - add main menu
-add pause menu in game level
+DONE - add pause menu in game level
+fix next block sometimes not working
+add block type specific statistics
 
-then maybe juice!
+
+then maybe juice!:
+
+Add effect for blocks for completed rows where individual blocks rotate 35 degrees randomly right or left then fall downwards off screen, then remove them.
+
+After blocks fall down, all blocks above simultaneously fall downwards together to final position like gravity, sin curve down, speed up as its falling. Once it hits the bottom do camera shake effect slightly.
+
+Instant block down with glow effect and cool sound effect

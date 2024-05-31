@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -12,16 +13,29 @@ public class PlayerController : MonoBehaviour
     private BlockMovement movement;
     private PauseMenu pauseMenu;
 
+    private bool movingRight = false;
     private bool holdingRight = false;
+    private bool canceledRight = false;
+
+    private bool movingLeft = false;
     private bool holdingLeft = false;
-    private float moveRightDelay = 0f;
-    private float moveLeftDelay = 0f;
+    private bool canceledLeft = false;
+
     private float movingInitialDelay = 0.18f;
-    private float movingRepeatedDelay = 0.04f;
+    private float movingRepeatedDelay = 0.05f;
+    private float movingRightInitialDelayCount = 0f;
+    private float movingLeftInitialDelayCount = 0f;
+    private float delayAdd = 0.01f;
 
     private void Start()
     {
         pauseMenu = FindObjectOfType<PauseMenu>();
+    }
+
+    public void ResetMovement()
+    {
+        movingRight = false;
+        movingLeft = false;
     }
 
     public void UpdateBlock(GameObject newBlock)
@@ -38,118 +52,154 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #region Input
-        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && !pauseMenu.IsGamePaused()) //Move Right
-            Move();
+        HandleInput();
+    }
 
-        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && !pauseMenu.IsGamePaused()) //Move Left
-            Move(false);
-
-        if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && !pauseMenu.IsGamePaused()) //Increase Block Down Speed
-            movement.IncreaseBlockSpeed(true);
-
-        if ((Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) && !pauseMenu.IsGamePaused()) //Stop Increasing Block Down Speed
-            movement.IncreaseBlockSpeed(false);
-
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !pauseMenu.IsGamePaused()) //Rotate Right (Right Click)
-            movement.RotateBlock(true);
-
-        if ((Input.GetMouseButtonDown(1)) && !pauseMenu.IsGamePaused()) //Rotate Left (Left Click)
-            movement.RotateBlock(false);
-
-        if ((Input.GetKeyUp(KeyCode.Space)) && !pauseMenu.IsGamePaused()) //Hard Drop
-            Debug.Log("Hard drop not yet implemented");
-
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+    private void HandleInput()
+    {
+        if (!pauseMenu.IsGamePaused()) //if the game is not paused then you can move
         {
-            pauseMenu.PauseOrResumeGame();
-        }
-            
-
-        //Hold move right and left not working!!!
-        /*
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) //Move Right
-        {
-            if (!holdingRight)
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) //moving right
             {
                 holdingRight = true;
-                StopCoroutine(MoveLeftHold());
-                Move();
-                StartCoroutine(MoveRightHold());
+                if (!movingRight)
+                {
+                    MoveRight();
+                }
             }
-        }
-        else //Stop Moving Right
-        {
-            moveRightDelay = 0f;
-            StopCoroutine(MoveRightHold());
-            holdingRight = false;
-        }
+            else //not moving right
+            {
+                movingRightInitialDelayCount = 0;
+                holdingRight = false;
+                movingRight = false;
+                StopCoroutine(HoldMoveRight());
+                canceledRight = false;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
-        {
-            if (!holdingLeft)
+                if (canceledLeft && holdingLeft)
+                {
+                    canceledLeft = false;
+                    MoveLeft();
+                }
+            }
+
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) //moving left
             {
                 holdingLeft = true;
-                StopCoroutine(MoveRightHold());
-                Move(false);
-                StartCoroutine(MoveLeftHold());
-            }            
+                if (!movingLeft)
+                {
+                    MoveLeft();
+                }
+            }
+            else //not moving left
+            {
+                movingLeftInitialDelayCount = 0;
+                holdingLeft = false;
+                movingLeft = false;
+                StopCoroutine(HoldMoveLeft());
+                canceledLeft = false;
+
+                if (canceledRight && holdingRight)
+                {
+                    canceledRight = false;
+                    MoveRight();
+                }
+            }
+
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) //Increase Block Down Speed
+                movement.IncreaseBlockSpeed(true);
+
+            if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) //Stop Increasing Block Down Speed
+                movement.IncreaseBlockSpeed(false);
+
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) //Rotate Right (Right Click)
+                movement.RotateBlock(true);
+
+            if (Input.GetMouseButtonDown(1)) //Rotate Left (Left Click)
+                movement.RotateBlock(false);
+
+            if (Input.GetKeyUp(KeyCode.Space)) //Hard Drop
+                Debug.Log("Hard drop not yet implemented");
+
+            if (movingRight && movingLeft)
+            {
+                if (canceledRight)
+                {
+                    movingRightInitialDelayCount = 0;
+                    StopCoroutine(HoldMoveRight());
+                }
+                else if (canceledLeft)
+                {
+                    movingLeftInitialDelayCount = 0;
+                    StopCoroutine(HoldMoveLeft());
+                }
+            }
         }
-        else //Stop Moving Left
-        {
-            moveLeftDelay = 0f;
-            StopCoroutine(MoveLeftHold());
-            holdingLeft = false;
-        }
-        */
-        #endregion
     }
 
-    private void Move(bool moveRight = true)
+    #region MoveRight
+    private void MoveRight()
     {
-        if (moveRight)
-            movement.MoveRight();
-        else
-            movement.MoveLeft();
+        movingRight = true;
+        if (movingLeft)
+        {
+            movingLeftInitialDelayCount = 0;
+            canceledLeft = true;
+            StopCoroutine(HoldMoveLeft());
+        }
+        StartCoroutine(HoldMoveRight());       
     }
 
-    //Hold move right and left not working!!!
-    /*
-    IEnumerator MoveRightHold()
+    private IEnumerator HoldMoveRight()
     {
-        float delayAdd = 0.1f;
-        moveRightDelay = 0f;
-        while (moveRightDelay < movingInitialDelay)
+        movement.MoveRight();
+
+        while (movingRight && movingRightInitialDelayCount < movingInitialDelay)
         {
+            movingRightInitialDelayCount += delayAdd;
             yield return new WaitForSeconds(delayAdd);
-            moveRightDelay += delayAdd;
         }
 
-        while (true)
+        while (movingRight)
         {
-            if (!movement.MoveRight())
+            if (movement.MoveRight())
+                yield return new WaitForSeconds(movingRepeatedDelay);
+            else
                 break;
-            yield return new WaitForSeconds(movingRepeatedDelay);
         }
     }
+    #endregion
 
-    IEnumerator MoveLeftHold()
+    #region MoveLeft
+    private void MoveLeft()
     {
-        float delayAdd = 0.1f;
-        moveLeftDelay = 0f;
+        movingLeft = true;
+        if (movingRight)
+        {
+            movingRightInitialDelayCount = 0;
+            canceledRight = true;
+            StopCoroutine(HoldMoveRight());            
+        }            
+        StartCoroutine(HoldMoveLeft());
+    }
+
+    private IEnumerator HoldMoveLeft()
+    {
+        
         movement.MoveLeft();
-        while (moveLeftDelay < movingInitialDelay)
+
+        while (movingLeft && movingLeftInitialDelayCount < movingInitialDelay)
         {
+            movingLeftInitialDelayCount += delayAdd;
             yield return new WaitForSeconds(delayAdd);
-            moveLeftDelay += delayAdd;
         }
 
-        while (true)
+        while (movingLeft)
         {
-            if (!movement.MoveLeft())
+            if (movement.MoveLeft())
+                yield return new WaitForSeconds(movingRepeatedDelay);
+            else
                 break;
-            yield return new WaitForSeconds(movingRepeatedDelay);
         }
     }
-    */
+    #endregion
 }

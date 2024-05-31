@@ -395,6 +395,7 @@
 "Assets/Scripts/Tetromino Scripts/BlockClearingTracker.cs"
 "Assets/Scripts/Tetromino Scripts/BlockMovement.cs"
 "Assets/Scripts/Tetromino Scripts/BlockSpawner.cs"
+"Assets/Scripts/Tetromino.cs"
 -langversion:9.0
 /deterministic
 /optimize+

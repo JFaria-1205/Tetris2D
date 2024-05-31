@@ -24,6 +24,14 @@ public class PauseMenu : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            PauseOrResumeGame();
+        }
+    }
+
     public bool IsGamePaused()
     {
         if (pauseState == 0) //unpaused

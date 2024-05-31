@@ -275,6 +275,19 @@ public class GameManager : MonoBehaviour
     private void UpdateNextBlockUI(GameObject nextBlock)
     {
         nextBlockImage.texture = AssetPreview.GetAssetPreview(nextBlock);
+        if (nextBlock == null || nextBlockImage.texture == null)
+        {
+            if (nextBlock == null)
+            {
+                Debug.LogError("'Next Block' object cannot be null. Cannot find 'Next Block' image of nulled value.");
+            }
+            
+            if (nextBlockImage.texture == null)
+            {
+                Debug.LogError("No 'Next Block' image available. Trying again...");
+                nextBlockImage.texture = AssetPreview.GetAssetPreview(nextBlock);
+            }            
+        }
     }
 
     private void UpdateLineClearsUI()
