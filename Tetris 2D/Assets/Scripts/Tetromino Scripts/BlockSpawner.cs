@@ -7,10 +7,9 @@ using Unity.VisualScripting;
 
 public class BlockSpawner : MonoBehaviour
 {
-    [SerializeField] List<GameObject> blockTypes = new List<GameObject>();
-    [SerializeField] List<Image> blockImages = new List<Image>();
+    [SerializeField] List<ScriptableObject> blockTypes = new List<ScriptableObject>();
     private Vector3 initialSpawnPoint = new Vector3(0, 4.5f, 0);
-    private List<GameObject> spawnBag = new List<GameObject>();
+    public List<GameObject> spawnBag = new List<GameObject>();
     private GameObject nextBlockToSpawn;
     [SerializeField] LayerMask bounds;
 
@@ -85,9 +84,10 @@ public class BlockSpawner : MonoBehaviour
     {
         spawnBag.Clear();
 
-        foreach (GameObject blockType in blockTypes)
+        
+        foreach (ScriptableObject s_Object in blockTypes)
         {
-            spawnBag.Add(blockType);
+            //spawnBag.Add(s_Object);
         }
     }
 

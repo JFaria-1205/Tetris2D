@@ -10,6 +10,22 @@ using UnityEngine.UI;
 [CreateAssetMenu]
 public class Tetromino : ScriptableObject
 {
-    [SerializeField] GameObject tetrominoPrefab;
-    [SerializeField] Image tetrominoUiImage;
+    public String tetrominoLetterNickname;
+    public GameObject tetrominoPrefab;
+    public Sprite tetrominoUiImage;
+
+    public String GetTetrominoName()
+    {
+        return tetrominoLetterNickname;
+    }
+
+    public GameObject GetTetrominoPrefab()
+    {
+        return tetrominoPrefab;
+    }
+
+    public Sprite GetTetrominoUiImage()
+    {
+        return tetrominoUiImage;
+    }
 }

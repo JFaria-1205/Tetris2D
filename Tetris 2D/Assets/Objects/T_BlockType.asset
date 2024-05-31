@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8017904e1d9264e4b88a8693aab587a4, type: 3}
+  m_Name: T_BlockType
+  m_EditorClassIdentifier: 
+  tetrominoLetterNickname: T
+  tetrominoPrefab: {fileID: 7405654861653013517, guid: b177a189129895f489f89f6ddea8d129, type: 3}
+  tetrominoUiImage: {fileID: 21300000, guid: 30b3994173b8f6446b628b204df70311, type: 3}
