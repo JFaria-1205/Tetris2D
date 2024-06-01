@@ -7,25 +7,18 @@ using Unity.VisualScripting;
 
 public class BlockSpawner : MonoBehaviour
 {
-    [SerializeField] List<ScriptableObject> blockTypes = new List<ScriptableObject>();
+    [SerializeField] List<Tetromino> blockTypes = new List<Tetromino>();
     private Vector3 initialSpawnPoint = new Vector3(0, 4.5f, 0);
     public List<GameObject> spawnBag = new List<GameObject>();
     private GameObject nextBlockToSpawn;
     [SerializeField] LayerMask bounds;
-
-    private PauseMenu pauseMenu;
 
     private void Awake()
     {
         RefreshSpawnBag();
     }
 
-    private void Start()
-    {
-        pauseMenu = FindObjectOfType<PauseMenu>();
-    }
-
-    public void SpawnBlock(out GameObject currentBlock, out GameObject nextBlock, out bool gameOver)
+    public void SpawnBlock(out GameObject currentBlock, out Texture nextBlockUiImage, out bool gameOver)
     {
         gameOver = false;
 
@@ -42,7 +35,7 @@ public class BlockSpawner : MonoBehaviour
 
         currentBlock = spawnedBlock;
         nextBlockToSpawn = GetBlock();
-        nextBlock = nextBlockToSpawn;
+        nextBlockUiImage = GetNextBlockUiImage(nextBlockToSpawn);
 
         if (CheckGameOver(spawnedBlock))
             gameOver = true;
@@ -68,6 +61,19 @@ public class BlockSpawner : MonoBehaviour
         }
     }
 
+    private Texture GetNextBlockUiImage(GameObject nextBlock)
+    {
+        foreach (Tetromino tetromino in blockTypes)
+        {
+            if (tetromino.tetrominoPrefab == nextBlock)
+            {
+                return tetromino.tetrominoUiImage;
+            }
+        }
+
+        return null;
+    }
+
     private GameObject GetBlock()
     {
         if (spawnBag.Count <= 0 || spawnBag == null)
@@ -85,9 +91,9 @@ public class BlockSpawner : MonoBehaviour
         spawnBag.Clear();
 
         
-        foreach (ScriptableObject s_Object in blockTypes)
+        foreach (Tetromino tetromino in blockTypes)
         {
-            //spawnBag.Add(s_Object);
+            spawnBag.Add(tetromino.tetrominoPrefab);
         }
     }
 

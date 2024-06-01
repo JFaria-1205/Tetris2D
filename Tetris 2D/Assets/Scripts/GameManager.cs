@@ -1,11 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
@@ -16,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text UI_LineClears;
     [SerializeField] Text UI_HighScore;
     [SerializeField] GameObject singleBlock;
-    [SerializeField] RawImage nextBlockImage;
+    [SerializeField] RawImage UI_NextBlockImage;
 
     [SerializeField] GameObject gameOver_Menu;
 
@@ -59,9 +53,9 @@ public class GameManager : MonoBehaviour
 
     private void SpawnBlock()
     {
-        blockSpawner.SpawnBlock(out currentBlock, out GameObject nextBlock, out bool gameOver);
+        blockSpawner.SpawnBlock(out currentBlock, out Texture nextBlockImage, out bool gameOver);
         GetComponent<PlayerController>().UpdateBlock(currentBlock);
-        UpdateNextBlockUI(nextBlock);
+        UpdateNextBlockUI(nextBlockImage);
 
         if (gameOver)
             GameOver();
@@ -272,22 +266,10 @@ public class GameManager : MonoBehaviour
         UI_Level.text = (currentLevel.ToString());
     }
 
-    private void UpdateNextBlockUI(GameObject nextBlock)
+    private void UpdateNextBlockUI(Texture nextBlockImage)
     {
-        nextBlockImage.texture = AssetPreview.GetAssetPreview(nextBlock);
-        if (nextBlock == null || nextBlockImage.texture == null)
-        {
-            if (nextBlock == null)
-            {
-                Debug.LogError("'Next Block' object cannot be null. Cannot find 'Next Block' image of nulled value.");
-            }
-            
-            if (nextBlockImage.texture == null)
-            {
-                Debug.LogError("No 'Next Block' image available. Trying again...");
-                nextBlockImage.texture = AssetPreview.GetAssetPreview(nextBlock);
-            }            
-        }
+        UI_NextBlockImage.texture = nextBlockImage;
+        Debug.Log(nextBlockImage.name);
     }
 
     private void UpdateLineClearsUI()
