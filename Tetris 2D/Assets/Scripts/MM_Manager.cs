@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MM_Manager : MonoBehaviour
 {
     [SerializeField] Text HighScore_UI;
+    [SerializeField] GameObject HighScoreDataSaverObject;
 
     private void Start()
     {
-        SetHighScoreUI();       
+        SetHighScoreUI();
     }
 
     public void PlayButton()
     {
-        Application.LoadLevel(1);
+        SceneManager.LoadScene("GameScene");
     }
 
     public void QuitButton()
@@ -31,6 +33,10 @@ public class MM_Manager : MonoBehaviour
 
     public void SetHighScoreUI()
     {
+        if(FindObjectOfType<HighScoreData>() == null)
+        {
+            Instantiate(HighScoreDataSaverObject);
+        }
         HighScore_UI.text = "HighScore: " + FindObjectOfType<HighScoreData>().GetHighScore().ToString();
     }
 }

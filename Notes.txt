@@ -30,20 +30,25 @@ true fix:
 It seems as though trying to rotate the block in every direction before giving up on the rotation was wrong. apparently you either rotate the direction you want, or the opposite way, or else no rotation, but I was trying to rotate the block a third time (180 degrees from original position before first rotation) and that isn't a feature in the tetris game. Also moving the block down to fix a rotation isn't good, so that was removed. Streamlined and refactored rotation code no to have 3 nested while-loops which was also causing issues.
 
 Need to:
-DONE - fix tetrimonos with no children staying in scene => will cause major lag for later levels
-DONE - fix game over not working
-DONE - add high score save
-DONE - add hold to move
-DONE - add main menu
-DONE - add pause menu in game level
-fix next block sometimes not working
-add block type specific statistics
+-DONE - fix tetrimonos with no children staying in scene => will cause major lag for later levels
+-DONE - fix game over not working
+-DONE - add high score save
+-DONE - add hold to move
+-DONE - add main menu
+-DONE - add pause menu in game level
+-DONE - fix next block sometimes not working
+-DONE - Add effect for blocks for completed rows where individual blocks rotate 35 degrees randomly right or left then fall downwards off screen, then remove them.
+-DONE - After row clears, all blocks above simultaneously fall downwards together to final position like gravity, sine curve down, speed up as its falling. Once it hits the bottom do camera shake effect slightly.
+
+-Instant block down with glow effect and cool sound effect
+every time you move right or left or rotate successfully, ghost block sets transform (position and rotation) to match and move down until move down returns false. instant down sets position (rotation should be the same) to ghost block position and locks.
+-add sound effects
+-add music
+-add settings menu to game scene and main menu
+-add block type specific statistics
 
 
-then maybe juice!:
 
-Add effect for blocks for completed rows where individual blocks rotate 35 degrees randomly right or left then fall downwards off screen, then remove them.
 
-After blocks fall down, all blocks above simultaneously fall downwards together to final position like gravity, sin curve down, speed up as its falling. Once it hits the bottom do camera shake effect slightly.
 
-Instant block down with glow effect and cool sound effect
+

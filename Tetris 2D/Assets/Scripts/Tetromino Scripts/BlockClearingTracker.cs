@@ -19,7 +19,7 @@ public class BlockClearingTracker : MonoBehaviour
 
     private IEnumerator RemoveAfterAnim(GameObject childToRemove)
     {
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.6f);
 
         Destroy(childToRemove);
 
@@ -28,7 +28,5 @@ public class BlockClearingTracker : MonoBehaviour
             Debug.Log("All children removed from " + this.gameObject.name + ": Deleting object...");
             Destroy(this.gameObject);
         }
-
-
     }
 }

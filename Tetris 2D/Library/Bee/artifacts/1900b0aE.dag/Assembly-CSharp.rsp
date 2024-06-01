@@ -390,6 +390,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"E:/Unity/Engine Downloads/2022.3.26f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"E:/Unity/Engine Downloads/2022.3.26f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Scripts/CameraShake.cs"
 "Assets/Scripts/Enums/E_PauseState.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/MM_Manager.cs"
@@ -398,10 +399,12 @@
 "Assets/Scripts/Saving and Loading/HighScoreData.cs"
 "Assets/Scripts/Saving and Loading/PlayerData.cs"
 "Assets/Scripts/Saving and Loading/SaveSystem.cs"
+"Assets/Scripts/ShakeComponent.cs"
 "Assets/Scripts/Tetromino Scripts/BlockClearingTracker.cs"
 "Assets/Scripts/Tetromino Scripts/BlockMovement.cs"
 "Assets/Scripts/Tetromino Scripts/BlockSpawner.cs"
 "Assets/Scripts/Tetromino Scripts/RowClearAnim.cs"
+"Assets/Scripts/Tetromino Scripts/RowMoveAnim.cs"
 "Assets/Scripts/Tetromino Scripts/Tetromino.cs"
 -langversion:9.0
 /deterministic

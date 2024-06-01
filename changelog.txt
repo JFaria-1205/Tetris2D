@@ -1,0 +1,14 @@
+changes:
+
+fixed next block sometimes not working, made screenshots of the prefabs with new textures and passed in textures to scriptable objects for each tetromino piece and used the textures in the UI instead of getting Unity's prefab image which wasn't working sometimes
+
+
+added some UI element changes to background for main menu and game scene
+
+added some cool ass block clear animations lol (with iTween)
+
+**********************************
+
+Added camera shake - made a static class camera shake with a camera shake component script, so camera shake is able to be called from anywhere and it finds the camera with a camera shake component and shakes it according to passed elements in the function.
+
+fixed high score data saver object being loaded multiple times when going back to main menu because the object was manually placed in the level instead of instantiated with a check to see if it is already in the level.

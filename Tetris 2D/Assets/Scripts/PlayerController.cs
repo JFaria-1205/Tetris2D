@@ -111,14 +111,14 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) //Stop Increasing Block Down Speed
                 movement.IncreaseBlockSpeed(false);
 
-            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) //Rotate Right (Right Click)
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) //Rotate Right (Left Click)
                 movement.RotateBlock(true);
 
-            if (Input.GetMouseButtonDown(1)) //Rotate Left (Left Click)
+            if (Input.GetMouseButtonDown(1)) //Rotate Left (Right Click (alt click))
                 movement.RotateBlock(false);
 
             if (Input.GetKeyUp(KeyCode.Space)) //Hard Drop
-                Debug.Log("Hard drop not yet implemented");
+                CameraShake.Shake(0.3f, 5f, 0.05f, 0.1f);
 
             if (movingRight && movingLeft)
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pause_Menu;
     [SerializeField] GameObject button_Menu;
     [SerializeField] GameObject countdown_Menu;
+    [SerializeField] GameObject pause_Button;
 
     [SerializeField] Text countdownNumber;
 
@@ -50,14 +52,18 @@ public class PauseMenu : MonoBehaviour
             }
         }
         else
-        {            
-            countdown_Menu.SetActive(false);
-            button_Menu.SetActive(true);
-            pause_Menu.SetActive(true);
-            pauseState = E_PauseState.Paused;
-            resumeCountdownInitiated = false;
-            playerController.ChangePauseStateForBlock(IsGamePaused());
-        }
+            PauseGame();
+    }
+
+    private void PauseGame()
+    {
+        countdown_Menu.SetActive(false);
+        pause_Button.SetActive(false);
+        button_Menu.SetActive(true);
+        pause_Menu.SetActive(true);
+        pauseState = E_PauseState.Paused;
+        resumeCountdownInitiated = false;
+        playerController.ChangePauseStateForBlock(IsGamePaused());
     }
 
     private IEnumerator ResumeGame()
@@ -74,11 +80,12 @@ public class PauseMenu : MonoBehaviour
         
         pauseState = E_PauseState.Unpaused;
         pause_Menu.SetActive(false);
+        pause_Button.SetActive(true);
         playerController.ChangePauseStateForBlock(IsGamePaused());
     }
 
     public void QuitToMenuButton()
     {
-        Application.LoadLevel(0);
+        SceneManager.LoadScene("MainMenu");
     }
 }

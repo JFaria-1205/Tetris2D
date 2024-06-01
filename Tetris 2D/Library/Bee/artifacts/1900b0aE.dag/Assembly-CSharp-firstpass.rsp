@@ -390,8 +390,6 @@
 -analyzer:"E:/Unity/Engine Downloads/2022.3.26f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"E:/Unity/Engine Downloads/2022.3.26f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Plugins/Pixelplacement/iTween/iTween.cs"
-"Assets/Plugins/Pixelplacement/iTween/Sample/MoveSample.cs"
-"Assets/Plugins/Pixelplacement/iTween/Sample/RotateSample.cs"
 -langversion:9.0
 /deterministic
 /optimize+

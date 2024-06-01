@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
@@ -195,7 +196,8 @@ public class GameManager : MonoBehaviour
         {
             if (child.transform.position.y > highestRowClearedYPos)
             {
-                child.transform.position = new Vector3(child.transform.position.x, child.transform.position.y - (0.5f * rowsCleared), child.transform.position.z);
+                Vector3 newPos = new Vector3(child.transform.position.x, child.transform.position.y - (0.5f * rowsCleared), child.transform.position.z);
+                child.GetComponent<RowMoveAnim>().PlayMoveDownAnim(newPos);
             }
         }
     }
@@ -237,9 +239,14 @@ public class GameManager : MonoBehaviour
     }
 
     #region UI_Functions
-    public void RetryButton()
+    public void RotateBackAfterClickingPause()
     {
-        Application.LoadLevel(1);
+        currentBlock.GetComponent<BlockMovement>().RotateBlock(false);
+    }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 
     private void UpdateScoreUI(bool initialize = false)
