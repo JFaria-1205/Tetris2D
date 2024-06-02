@@ -389,7 +389,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"E:/Unity/Engine Downloads/2022.3.26f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"E:/Unity/Engine Downloads/2022.3.26f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Plugins/Pixelplacement/iTween/iTween.cs"
+"Assets/Plugins/iTween/iTween.cs"
 -langversion:9.0
 /deterministic
 /optimize+
