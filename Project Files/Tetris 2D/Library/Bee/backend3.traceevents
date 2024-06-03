@@ -1,0 +1,219 @@
+{ "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
+,{ "pid":12345, "tid":0, "ts":1717399105595388, "dur":37325, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1717399105632722, "dur":229, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1717399105633034, "dur":506, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1717399105633675, "dur":82, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/level0" }}
+,{ "pid":12345, "tid":0, "ts":1717399105633824, "dur":70, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":0, "ts":1717399105633943, "dur":85, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":0, "ts":1717399105634043, "dur":91, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":0, "ts":1717399105634150, "dur":66, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":0, "ts":1717399105634226, "dur":56, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":0, "ts":1717399105634494, "dur":50, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/boot.config" }}
+,{ "pid":12345, "tid":0, "ts":1717399105634554, "dur":57, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":0, "ts":1717399105634891, "dur":72, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105635117, "dur":55, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105635222, "dur":67, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105635335, "dur":68, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105635467, "dur":71, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105635620, "dur":64, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105635729, "dur":69, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105635863, "dur":75, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105636065, "dur":72, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105636191, "dur":83, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105636288, "dur":66, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105636456, "dur":75, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105636595, "dur":65, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105636741, "dur":59, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105637081, "dur":95, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105637259, "dur":62, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105637385, "dur":75, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105637509, "dur":71, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105637646, "dur":75, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105637786, "dur":60, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.2D.Animation.Runtime.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105638032, "dur":80, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105638161, "dur":67, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105638273, "dur":68, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105638487, "dur":69, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105638623, "dur":68, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105638980, "dur":71, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105639138, "dur":81, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/app.info" }}
+,{ "pid":12345, "tid":0, "ts":1717399105639282, "dur":72, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105639702, "dur":72, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":0, "ts":1717399105639839, "dur":74, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":0, "ts":1717399105640072, "dur":74, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":0, "ts":1717399105633573, "dur":6599, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1717399105640174, "dur":85428, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1717399105725604, "dur":466, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1717399105726071, "dur":290, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1717399105726627, "dur":79, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1717399105726753, "dur":9169, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1717399105634016, "dur":6174, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1717399105640195, "dur":8284, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1717399105648530, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/csharpactions/boot.config_tyr4.info" }}
+,{ "pid":12345, "tid":1, "ts":1717399105648591, "dur":256, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1717399105648870, "dur":1468, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1717399105650340, "dur":199, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1717399105650613, "dur":74970, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105634194, "dur":6032, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105640233, "dur":1172, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105641406, "dur":7095, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105648582, "dur":104, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"E:\\Unity\\Engine Downloads\\2022.3.26f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":2, "ts":1717399105648529, "dur":160, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":2, "ts":1717399105648690, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105648798, "dur":263, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp\\StagingArea\\WindowsPlayer.exe" }}
+,{ "pid":12345, "tid":2, "ts":1717399105648792, "dur":272, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D.exe" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649068, "dur":88, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649157, "dur":67, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D.exe" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649245, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649393, "dur":92, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649512, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649595, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649692, "dur":83, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649815, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649908, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649982, "dur":54, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"E:\\Unity\\Engine Downloads\\2022.3.26f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\UnityPlayer.dll" }}
+,{ "pid":12345, "tid":2, "ts":1717399105649976, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":2, "ts":1717399105650039, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105650112, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1717399105650197, "dur":75409, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1717399105634069, "dur":6139, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1717399105640214, "dur":1101, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1717399105641316, "dur":7201, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1717399105648544, "dur":51, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"E:\\Unity\\Engine Downloads\\2022.3.26f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\4.5\\web.config" }}
+,{ "pid":12345, "tid":3, "ts":1717399105648521, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1717399105648634, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1717399105648924, "dur":373, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":3, "ts":1717399105650168, "dur":75402, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1717399105634254, "dur":5986, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1717399105640243, "dur":906, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1717399105641149, "dur":7398, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1717399105648551, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":4, "ts":1717399105648926, "dur":89, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":4, "ts":1717399105649162, "dur":142, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":4, "ts":1717399105649886, "dur":52, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1717399105650043, "dur":109, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1717399105650153, "dur":75424, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1717399105634293, "dur":5954, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1717399105640250, "dur":2258, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1717399105642509, "dur":6026, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1717399105648541, "dur":83, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":5, "ts":1717399105648626, "dur":70, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1717399105648760, "dur":71, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"E:\\Unity\\Engine Downloads\\2022.3.26f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\2.0\\web.config" }}
+,{ "pid":12345, "tid":5, "ts":1717399105648715, "dur":121, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1717399105648839, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1717399105649610, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1717399105649702, "dur":199, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1717399105649907, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1717399105650151, "dur":136, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":5, "ts":1717399105650289, "dur":75334, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105634363, "dur":5901, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105640270, "dur":2018, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105642289, "dur":6206, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105648547, "dur":284, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105648857, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105648929, "dur":116, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/app.info" }}
+,{ "pid":12345, "tid":6, "ts":1717399105649115, "dur":60, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"E:\\Unity\\Engine Downloads\\2022.3.26f1\\Editor\\Data\\MonoBleedingEdge\\lib\\mono\\unityjit-win32\\Facades\\netstandard.dll" }}
+,{ "pid":12345, "tid":6, "ts":1717399105649113, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":6, "ts":1717399105649353, "dur":220, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.Collections.dll" }}
+,{ "pid":12345, "tid":6, "ts":1717399105649586, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105649671, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105649758, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105649870, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105650030, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1717399105650176, "dur":75398, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105634426, "dur":5858, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105640291, "dur":1200, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105641492, "dur":7074, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105648572, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1717399105648664, "dur":79, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105648761, "dur":110, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":7, "ts":1717399105648872, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105648995, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105649096, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105649200, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105649350, "dur":83, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105649455, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105649521, "dur":203, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1717399105649824, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105649915, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1717399105649999, "dur":116, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1717399105650185, "dur":75401, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105634481, "dur":5816, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105640301, "dur":1374, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105641677, "dur":6833, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105648529, "dur":85, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":8, "ts":1717399105648685, "dur":71, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":8, "ts":1717399105648816, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":8, "ts":1717399105648885, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105649018, "dur":115, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105649211, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105649263, "dur":160, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll" }}
+,{ "pid":12345, "tid":8, "ts":1717399105649448, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105649541, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105649666, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105649909, "dur":95, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1717399105650004, "dur":131, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1717399105650138, "dur":75461, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105634549, "dur":5770, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105640325, "dur":2234, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105642560, "dur":5948, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105648764, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":9, "ts":1717399105648860, "dur":171, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":9, "ts":1717399105649160, "dur":77, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.Burst.Unsafe.dll" }}
+,{ "pid":12345, "tid":9, "ts":1717399105649387, "dur":175, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll" }}
+,{ "pid":12345, "tid":9, "ts":1717399105649651, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105649769, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105649883, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105649967, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105650053, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105650132, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1717399105650183, "dur":74, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":9, "ts":1717399105650258, "dur":75323, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105634602, "dur":5728, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105640333, "dur":1197, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105641530, "dur":7108, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105648733, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":10, "ts":1717399105648926, "dur":74, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649013, "dur":109, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649168, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649253, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649342, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649455, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649526, "dur":81, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649627, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649713, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649798, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105649979, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105650081, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1717399105650145, "dur":75451, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105634694, "dur":5658, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105640353, "dur":8152, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105648582, "dur":115, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"E:\\Unity\\Engine Downloads\\2022.3.26f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml" }}
+,{ "pid":12345, "tid":11, "ts":1717399105648524, "dur":175, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":11, "ts":1717399105648701, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105648787, "dur":76, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"E:\\Unity\\Engine Downloads\\2022.3.26f1\\Editor\\Data\\PlaybackEngines\\WindowsStandaloneSupport\\Variations\\win64_player_nondevelopment_mono\\MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":11, "ts":1717399105648776, "dur":89, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":11, "ts":1717399105648866, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105648989, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105649102, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105649162, "dur":50, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":11, "ts":1717399105649325, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105649410, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105649516, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105649635, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105649729, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105649805, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105649890, "dur":170, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105650083, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1717399105650160, "dur":75429, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1717399105634800, "dur":5571, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1717399105640372, "dur":8126, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1717399105650126, "dur":242, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"ProjectSettings\\BurstAotSettings_StandaloneWindows.json" }}
+,{ "pid":12345, "tid":12, "ts":1717399105650569, "dur":185, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"C:\\Unity\\Projects\\Tetris2D\\Tetris 2D\\Library\\PackageCache\\com.unity.burst@1.8.13\\.Runtime\\bcl.exe" }}
+,{ "pid":12345, "tid":12, "ts":1717399105648525, "dur":2231, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"GenerateNativePluginsForAssemblies Library/Bee/artifacts/WinPlayerBuildProgram/AsyncPluginsFromLinker" }}
+,{ "pid":12345, "tid":12, "ts":1717399105650757, "dur":575, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1717399105653209, "dur":31120, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library\\Bee\\artifacts\\WinPlayerBuildProgram\\AsyncPluginsFromLinker\\x86_64\\lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":12, "ts":1717399105653207, "dur":31125, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Plugins/x86_64/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":12, "ts":1717399105721403, "dur":4118, "ph":"X", "name": "CopyFiles",  "args": { "detail":"E:/Unity/Projects/Tetris2D (Moved to C drive - 5.22.24)/Builds/Tetris 2D Build Latest/Tetris 2D_Data/Plugins/x86_64/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":0, "ts":1717399105744099, "dur":2970, "ph":"X", "name": "ProfilerWriteOutput" }
+,
