@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject gameOver_Menu;
 
+    [SerializeField] GameObject HighScoreDataSaverObject;
+
 
     public int currentLevel { get; private set; }
     public float currentGravity { get; private set; }
@@ -31,6 +33,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if (FindObjectOfType<HighScoreData>() == null)
+            Instantiate(HighScoreDataSaverObject);
+
         InitializeGame();
     }
 

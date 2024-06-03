@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject button_Menu;
     [SerializeField] GameObject countdown_Menu;
     [SerializeField] GameObject pause_Button;
+    [SerializeField] GameObject controls_Menu;
 
     [SerializeField] Text countdownNumber;
 
@@ -82,6 +83,18 @@ public class PauseMenu : MonoBehaviour
         pause_Menu.SetActive(false);
         pause_Button.SetActive(true);
         playerController.ChangePauseStateForBlock(IsGamePaused());
+    }
+
+    public void ControlsButton()
+    {
+        button_Menu.SetActive(false);
+        controls_Menu.SetActive(true);
+    }
+
+    public void ControlsBackButton()
+    {
+        controls_Menu.SetActive(false);
+        button_Menu.SetActive(true);
     }
 
     public void QuitToMenuButton()

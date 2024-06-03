@@ -117,8 +117,10 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonDown(1)) //Rotate Left (Right Click (alt click))
                 movement.RotateBlock(false);
 
+            /*
             if (Input.GetKeyUp(KeyCode.Space)) //Hard Drop
                 CameraShake.Shake(0.3f, 5f, 0.05f, 0.1f);
+            */
 
             if (movingRight && movingLeft)
             {

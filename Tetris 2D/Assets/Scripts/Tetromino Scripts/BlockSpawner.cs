@@ -65,9 +65,9 @@ public class BlockSpawner : MonoBehaviour
     {
         foreach (Tetromino tetromino in blockTypes)
         {
-            if (tetromino.tetrominoPrefab == nextBlock)
+            if (tetromino.GetTetrominoPrefab() == nextBlock)
             {
-                return tetromino.tetrominoUiImage;
+                return tetromino.GetTetrominoUiImage();
             }
         }
 
@@ -93,7 +93,7 @@ public class BlockSpawner : MonoBehaviour
         
         foreach (Tetromino tetromino in blockTypes)
         {
-            spawnBag.Add(tetromino.tetrominoPrefab);
+            spawnBag.Add(tetromino.GetTetrominoPrefab());
         }
     }
 

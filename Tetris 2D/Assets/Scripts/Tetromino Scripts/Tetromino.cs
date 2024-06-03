@@ -3,16 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu]
 public class Tetromino : ScriptableObject
 {
-    public String tetrominoLetterNickname;
-    public GameObject tetrominoPrefab;
-    public Texture tetrominoUiImage;
+    [SerializeField] private String tetrominoLetterNickname;
+    [SerializeField] private GameObject tetrominoPrefab;
+    [SerializeField] private Texture tetrominoUiImage;
 
     public String GetTetrominoName()
     {
